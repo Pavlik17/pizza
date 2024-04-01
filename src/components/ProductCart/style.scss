@@ -1,0 +1,25 @@
+.product-cart{
+  width: 263px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 102px;
+}
+.product-cart__title{
+  margin-top: 24px;
+  margin-bottom: 21px;
+  color: #ff1313;
+}
+.product-cart__description-product{
+  color: #626262;
+  margin-bottom: 40px;
+}
+.product-cart__footer-cart{
+  display: flex;
+  flex-direction: row;
+}
+.price-product{
+  color: black;
+  font-size: 24px;
+  font-family: Raleway-SemiBold,serif;
+  margin-right: 62px;
+}

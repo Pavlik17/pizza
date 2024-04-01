@@ -1,0 +1,127 @@
+.footer{
+  width: 100%;
+  background-color: #FAFAFA;
+  display: flex;
+  justify-content: center;
+}
+.footer__container{
+  display: flex;
+  flex-direction: row;
+  max-width: 1300px;
+  padding-top: 110px;
+  padding-bottom: 96px;
+}
+.container__logo-section{
+  display: flex;
+  flex-direction: row;
+}
+.footer-logo-pizza{
+  position: relative;
+}
+.footer-logo-pizza__image{
+  position: absolute;
+  top: -12px;
+  left: -49px;
+}
+.container__footer-menu{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 163.41px;
+  margin-right: 195px;
+}
+.menu{
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 90px;
+  margin: 0;
+}
+.footer-menu__social-networks{
+ display: flex;
+  flex-direction: row;
+}
+.social-networks__icon{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.menu__footer-list-element{
+  list-style-type: none;
+  margin-right: 22px;
+  margin-left: 22px;
+}
+.contacts__number-phone{
+  margin: 0;
+  padding-bottom: 54px;
+}
+.contacts__text{
+  margin: 0;
+  padding-bottom: 21px;
+}
+.menu__footer-list-element{
+  font-size: 16px;
+}
+
+@media (max-width: 1190px){
+  .footer__container{
+    max-width: 1000px;
+  }
+  .container__footer-menu{
+    margin-left: 57.41px;
+    margin-right: 102px;
+  }
+}
+@media (max-width: 1050px){
+  .footer__container{
+    max-width: 800px;
+  }
+  .container__footer-menu{
+    margin-left: 0;
+    margin-right: 29px;
+  }
+}
+@media (max-width: 850px){
+  .contacts{
+    display: none;
+  }
+  .container__footer-menu{
+    margin-right: 0;
+  }
+  .footer-menu__social-networks{
+    margin-left: -115px;
+  }
+}
+@media (max-width: 630px){
+  .footer__container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+    padding-bottom: 5px;
+    max-width: 480px;
+  }
+  .container__logo-section{
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 45px;
+    align-items: center;
+    margin: 0 auto;
+  }
+  .footer-logo-pizza__image{
+    position: static;
+  }
+ .menu{
+   padding-left: 0;
+  padding-bottom: 35px;
+ }
+  .menu__footer-list-element{
+    font-size: 14px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .footer-menu__social-networks{
+    margin-left: 0px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 479px){}

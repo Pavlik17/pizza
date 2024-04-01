@@ -1,0 +1,138 @@
+.delivery-payment{
+  display: flex;
+  flex-direction: column;
+}
+.delivery-payment__title{
+  font-family: Raleway-SemiBold,serif;
+  font-size: 50px;
+  padding-top: 178px;
+  padding-bottom: 93px;
+  margin: auto;
+}
+.delivery-payment__description{
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 100%;
+  justify-content: space-between;
+}
+.description__column{
+  margin-right: 15px;
+  margin-left: 15px;
+  position: relative;
+}
+.column__title{
+  margin-bottom: 24px;
+  font-family: Raleway-SemiBold,serif;
+  font-size: 20px;
+}
+.column_text{
+  font-family: raleway-regular, serif;
+  font-size: 14px;
+  color: #626262;
+}
+
+.button-map-delivery{
+  margin-top: 27px;
+}
+.requisites{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+
+}
+.requisites__systems{
+  display: flex;
+  flex-direction: column;
+}
+.requisites__systems-title{
+  font-size: 14px;
+  margin: 0;
+  padding-bottom: 18px;
+  font-family: raleway-regular, serif;
+}
+.systems{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 286px;
+  justify-content: space-between;
+}
+.requisites__payment-methods{
+  display: flex;
+  flex-direction: column;
+  margin-left: 90px;
+  font-size: 14px;
+}
+.requisites__payment-methods-title{
+  padding-bottom: 29px;
+  margin: 0;
+}
+.payment-type{
+  display: flex;
+  flex-direction: row;
+}
+.payment-type-word-1{
+  margin: 0;
+  padding-right: 22px;
+  font-family: Raleway-SemiBold, serif;
+  font-weight: bold;
+}
+.payment-type-word{
+  margin: 0;
+  font-weight: bold;
+  font-family: Raleway-SemiBold, serif;
+}
+@media (max-width: 1320px) {
+  .description__column{
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+  .column__title{
+    font-size: 19px;
+  }
+}
+@media (max-width: 850px){
+  .delivery-payment__title{
+    padding-top: 60px;
+  }
+}
+@media (max-width: 630px){
+  .delivery-payment{
+    max-width: 480px;
+    margin: 0 auto;
+  }
+  .delivery-payment__title{
+    padding-top: 50px;
+    padding-bottom: 10px;
+    font-size: 35px;
+  }
+  .column__title{
+    font-size: 15px;
+  }
+  .column_text{
+    font-size: 11px;
+  }
+  .requisites__payment-methods{
+    margin-left: 20px;
+  }
+  .requisites__systems-title{
+    font-size: 11px;
+  }
+  .systems{
+    justify-content: space-around;
+  }
+  .requisites__payment-methods{
+    margin-left: 10px;
+  }
+  .requisites__payment-methods-title{
+    font-size: 12px;
+  }
+  .payment-type{
+    font-size: 11px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 479px){}

@@ -1,0 +1,24 @@
+.background_sliders{
+  position: absolute;
+  z-index: -2;
+  top: 164px;
+  right: -143px;
+}
+.stocks-products__stocks{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 119px;
+  font-family: Raleway-SemiBold,serif;
+  font-size: 50px;
+  padding-bottom: 82px;
+}
+.stocks-products__populars{
+  color: #ff1313;
+  font-family: Raleway-SemiBold,serif;
+  font-size: 28px;
+  padding-top: 85px;
+  padding-bottom: 40px;
+  padding-left: 57px;
+}
+

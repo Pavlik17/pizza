@@ -1,0 +1,130 @@
+.contact-map__container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.contact-map__container-title{
+  margin: 0;
+  padding-top: 195px;
+  padding-bottom: 70px;
+  font-size: 50px;
+}
+.map{
+  border-radius: 8px;
+  padding-bottom: 54px;
+}
+.contact-map__contacts-info{
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  padding-bottom: 156px;
+}
+.legal-address{
+  display: flex;
+  flex-direction: column;
+}
+.address{
+  margin: 0;
+  padding-left: 24px;
+}
+.legal-address__container-address{
+  display: flex;
+  padding-top: 7px;
+  font-size: 24px;
+}
+.legal-address__container-email{
+  display: flex;
+  font-size: 24px;
+}
+.email{
+  padding-left: 19px;
+}
+.time{
+  display: flex;
+  flex-direction: column;
+  font-size: 24px;
+}
+.time__info{
+  margin: 0;
+  padding-top: 8px;
+}
+.questions-numbers{
+  display: flex;
+  flex-direction: column;
+  font-size: 24px;
+}
+.questions-numbers__info{
+  margin: 0;
+  padding-top: 8px;
+}
+.legal-address__title{
+  font-size: 24px;
+  font-family: Raleway-SemiBold, serif;
+  font-weight: bold;
+  margin: 0;
+  padding-bottom: 16px;
+}
+@media (max-width: 1320px){
+  .map{
+    max-width: 1000px;
+  }
+}
+@media (max-width: 1200px) {
+  .time{
+    padding-top: 7px;
+  }
+  .questions-numbers{
+    padding-top: 7px;
+  }
+  .legal-address__container-address{
+    font-size: 21px;
+  }
+  .legal-address__container-email{
+    font-size: 21px;
+  }
+  .legal-address__title{
+    font-size: 20px;
+  }
+  .time__info{}
+  .questions-numbers__info{
+    font-size: 20px;
+  }
+}
+@media (max-width: 1050px){
+  .map{
+    max-width: 800px;
+  }
+}
+@media (max-width: 850px) {
+  .map{
+    max-width: 600px;
+  }
+  .legal-address{
+    display: none;
+  }
+}
+@media (max-width: 630px){
+  .contact-map__container{
+    max-width: 480px;
+    margin: 0 auto;
+  }
+  .contact-map__container-title{
+    padding-bottom: 30px;
+    font-size: 40px;
+    padding-top: 70px;
+  }
+  .map{
+    max-width: 400px;
+    max-height: 250px;
+  }
+  .legal-address__title{
+    font-size: 17px;
+  }
+  .time__info{
+    font-size: 13px;
+  }
+  .questions-numbers__info{
+    font-size: 13px;
+  }
+}
+@media (min-width: 320px) and (max-width: 479px){}
