@@ -120,6 +120,7 @@
   }
   .requisites__systems-title{
     font-size: 11px;
+    margin-left: 10px;
   }
   .systems{
     justify-content: space-around;
@@ -135,4 +136,25 @@
   }
 }
 
-@media (min-width: 320px) and (max-width: 479px){}
+@media (min-width: 320px) and (max-width: 479px){
+  .requisites{
+    display: flex;
+    flex-direction: column;
+  }
+  .requisites__systems-title{
+    margin-left: 10px;
+  }
+  .column_text{
+    display: none;
+  }
+  .button-map-delivery{
+    display: none;
+  }
+  .delivery-payment__title{
+    font-size: 30px;
+  }
+  .column__title{
+    font-size: 11px;
+    text-align: center;
+  }
+}

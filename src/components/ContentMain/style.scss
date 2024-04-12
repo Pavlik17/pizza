@@ -22,7 +22,12 @@
 }
 @media (max-width: 850px){
   .content-main__container{
-    max-width: 600px;
+    width: 100%;
   }
 }
-@media (min-width: 320px) and (max-width: 479px){}
+@media (min-width: 630px) and (max-width: 850px){
+  .content-main__container{
+    width: 90%;
+  }
+}
+@media (min-width: 320px) and (max-width: 490px){}

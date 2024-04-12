@@ -8,22 +8,23 @@ import 'swiper/css/navigation';
 import {ref} from "vue";
 
 const modules = [Navigation];
-const numberOfSlides = ref(3);
 const space_between_slides = ref(30);
+/*const numberOfSlides = ref(3);
+
 function handleResize(){
   if (document.documentElement.clientWidth >= 1320) {
     numberOfSlides.value = 3;
   } else if (document.documentElement.clientWidth > 800 && document.documentElement.clientWidth <= 1050) {
     numberOfSlides.value = 2;
-  } else if(document.documentElement.clientWidth <800){
+  } else if(document.documentElement.clientWidth <600){
     numberOfSlides.value = 1;
   }
-};
+};*/
 function resizeSpacesSlides(){
   if(document.documentElement.clientWidth < 1341){
-  space_between_slides.value = 36;
+  space_between_slides.value = 1;
 }};
-  window.addEventListener('resize', handleResize);
+  //window.addEventListener('resize', handleResize);
   window.addEventListener('resize',resizeSpacesSlides);
 </script>
 
@@ -33,6 +34,7 @@ function resizeSpacesSlides(){
     <swiper class="swiper-stocks"
           :slides-per-view="numberOfSlides"
           :speed="100"
+            :loop="true"
             :space-between="space_between_slides"
           :modules="modules"
           :navigation="{

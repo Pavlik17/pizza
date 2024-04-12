@@ -127,4 +127,24 @@
     font-size: 13px;
   }
 }
-@media (min-width: 320px) and (max-width: 479px){}
+@media  (max-width: 490px){
+  .contact-map__contacts-info{
+    padding-bottom: 50px;
+  }
+  .map{
+    width: 100%;
+  }
+}
+@media (min-width: 335px) and (max-width: 450px){
+  .map{
+    width: 85%;
+  }
+}
+@media (min-width: 320px) and (max-width: 335px){
+  .map{
+    max-width: 85%;
+  }
+  .legal-address__title{
+    font-size: 13px;
+  }
+}

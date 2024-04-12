@@ -23,3 +23,48 @@
   font-family: Raleway-SemiBold,serif;
   margin-right: 62px;
 }
+
+@media (max-width: 630px){
+  .price-product{
+    margin-right: 15px;
+    font-size: 17px;
+  }
+  .product-cart{
+    align-items: center;
+    max-width: 35%;
+  }
+  .image-product{
+    max-width: 80%;
+  }
+  .product-cart__description-product{
+    max-width: 70%;
+  }
+}
+ @media (max-width: 480px) {
+  .product-cart{
+
+    max-width: 35%;
+    margin-left:0px;
+    margin-right: 0px;
+  }
+  .price-product{
+    font-size: 15px;
+  }
+  .choose-button{
+    width: 100%;
+    max-width: 80px;
+  }
+  .image-product{
+    max-width: 80%;
+  }
+  .product-cart__description-product{
+    max-width: 70%;
+    font-size: 13px;
+  }
+
+}
+@media (min-width: 320px) and (max-width: 390px){
+.product-cart__footer-cart{
+  flex-direction: column;
+}
+}

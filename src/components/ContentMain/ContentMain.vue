@@ -1,7 +1,7 @@
 <template>
   <div class="content-main">
     <div class="content-main__container">
-     <!-- <sliders-products></sliders-products>-->
+     <sliders-products></sliders-products>
       <menu-products></menu-products>
       <delivery-payment></delivery-payment>
       <contact-map></contact-map>
