@@ -40,7 +40,9 @@
     max-height: 135px;
   }
 }
-@media (max-width: 1050px){}
+@media (max-width: 1050px){
+
+}
 @media (max-width: 850px){
 .popular-slide{
   width: 240px;
@@ -51,5 +53,10 @@
     height: 100%;
   }
 }
-@media (max-width:630px) {}
+@media (max-width:630px) {
+  .swiper-populars-container{
+    max-width: 90%;
+    margin: 0 auto;
+  }
+}
 @media (min-width: 320px) and (max-width: 479px){}

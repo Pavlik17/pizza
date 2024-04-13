@@ -21,4 +21,9 @@
   padding-bottom: 40px;
   padding-left: 57px;
 }
-
+@media (min-width: 320px) and (max-width:490px){
+  .stocks-products__stocks{
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
