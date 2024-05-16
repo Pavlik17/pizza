@@ -1,3 +1,17 @@
+<script setup>
+import ButtonMenu from "@/components/icons/ButtonMenu/ButtonMenu.vue";
+import {ProductDataStore} from "@/store/store.js";
+
+const props = defineProps({
+  titleProduct:String,
+  descriptionProduct:String,
+  priceProduct:Number,
+  idProduct:Number,
+});
+
+const store = ProductDataStore();
+</script>
+
 <template>
   <div class="product-cart">
     <slot name="image-product">
@@ -7,21 +21,9 @@
     <p class="product-cart__description-product">{{props.descriptionProduct}}</p>
     <div class="product-cart__footer-cart">
       <div class="price-product">от {{props.priceProduct}} р.</div>
-      <button-menu class="choose-button" v-on:click=""></button-menu>
+      <button-menu class="choose-button" v-on:click="store.addProductsInCart(props.titleProduct,props.descriptionProduct,props.priceProduct,props.idProduct)"></button-menu>
     </div>
   </div>
 </template>
 
-<script setup>
-import ButtonMenu from "@/components/icons/ButtonMenu/ButtonMenu.vue";
-
-const props = defineProps({
-  titleProduct:String,
-  descriptionProduct:String,
-  priceProduct:Number,
-});
-</script>
-
-<style lang="scss" scoped src="./style.scss">
-
-</style>
+<style lang="scss" scoped src="./style.scss"></style>

@@ -39,10 +39,12 @@
 
 .header-list-element{
   list-style-type: none;
+  cursor: pointer;
 }
 .header__cart-button-section{
   position: relative;
   margin-left: 202px;
+  cursor: pointer;
 }
 .container__bottom-header{
   display: flex;
@@ -80,6 +82,7 @@
   font-family: Raleway-SemiBold,serif;
   font-size: 16px;
   padding: 14px 52px 15px 52px;
+  cursor: pointer;
 }
 .block-button__white-button{
   background-color:white;
@@ -90,6 +93,7 @@
   font-size: 16px;
   padding: 14px 52px 15px 52px;
   margin-left: 16px;
+  cursor: pointer;
 }
 
 .bottom-header__left-block{

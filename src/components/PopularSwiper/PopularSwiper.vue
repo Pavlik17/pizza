@@ -33,7 +33,6 @@ function handleResize(){
             }"
             :space-between="30"
             :modules="modules"
-            :slides-per-view="numberOfSlides"
             :speed="100"
             :loop="true"
     >

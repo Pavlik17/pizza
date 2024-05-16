@@ -9,17 +9,22 @@
   margin-bottom: 21px;
   color: #ff1313;
 }
+.choose-button:hover{
+  cursor: pointer;
+}
 .product-cart__description-product{
   color: #626262;
   margin-bottom: 40px;
+  height: 100%;
 }
 .product-cart__footer-cart{
   display: flex;
   flex-direction: row;
 }
+
 .price-product{
   color: black;
-  font-size: 24px;
+  font-size: 22px;
   font-family: Raleway-SemiBold,serif;
   margin-right: 62px;
 }
@@ -27,7 +32,7 @@
 @media (max-width: 630px){
   .price-product{
     margin-right: 15px;
-    font-size: 17px;
+    font-size: 15px;
   }
   .product-cart{
     align-items: center;
@@ -38,6 +43,7 @@
   }
   .product-cart__description-product{
     max-width: 70%;
+    height: 100%;
   }
 }
  @media (max-width: 480px) {
@@ -60,6 +66,7 @@
   .product-cart__description-product{
     max-width: 70%;
     font-size: 13px;
+    height: 100%;
   }
 
 }

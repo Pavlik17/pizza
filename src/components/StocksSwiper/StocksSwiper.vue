@@ -32,7 +32,7 @@ function resizeSpacesSlides(){
   <div class="swiper-stocks-container">
     <arrow-prev-slider class="prev-stocks-button"></arrow-prev-slider>
     <swiper class="swiper-stocks"
-          :slides-per-view="numberOfSlides"
+
           :speed="100"
             :loop="true"
             :space-between="space_between_slides"

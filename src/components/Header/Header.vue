@@ -24,7 +24,9 @@
           <li class="header-list-element">О нас</li>
         </ol>
         <div class="header__cart-button-section">
-          <cart-button></cart-button>
+         <router-link to="/cart">
+           <cart-button></cart-button>
+         </router-link>
         </div>
        <!-- <small-shadow class="small-shadow"></small-shadow>-->
       </div>
