@@ -2,8 +2,8 @@ import {defineStore} from "pinia";
 import {ref} from "vue";
 
 export const  ProductDataStore= defineStore('products_data',() => {
-    const total_price = ref(0);
-    const productsInCart = ref([]);
+    let total_price = ref(0);
+    let products_in_cart = ref(JSON.parse(localStorage.getItem('products_in_cart')));
     function plusPrice(addedSum){
         total_price.value = total_price.value + Number(addedSum);
         localStorage.setItem('price',total_price.value);
@@ -24,21 +24,24 @@ export const  ProductDataStore= defineStore('products_data',() => {
             priceProduct:price,
             idProduct:id,
         };
-            productsInCart.value = [...productsInCart.value, addedProduct];
-            localStorage.setItem('products_in_cart', JSON.stringify(productsInCart.value));
+            products_in_cart.value = [...products_in_cart.value, addedProduct];
+            localStorage.setItem('products_in_cart', JSON.stringify(products_in_cart.value));
             plusPrice(addedProduct.priceProduct);
-        console.log(productsInCart);
+        console.log('Массив в хранилище:');
+        console.log( products_in_cart);
+
     };
     //Доделать передачу продуктов в корзину
     function removeProductFromCart(id_product){
         let newProductsArray = productsInCart.value.filter(item => item.idProduct != id_product);
-        productsInCart.value = [...newProductsArray];
+        products_in_cart.value = [...newProductsArray];
     };
     return {
         total_price,
         plusPrice,
         minusPrice,
         addProductsInCart,
+        products_in_cart,
         removeProductFromCart,
     };
 });

@@ -1,0 +1,24 @@
+.cart-content{
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 1140px;
+  width: 100%;
+  min-height: 100vh;
+}
+.cart-title{
+  margin: 0 auto;
+  font-size: 50px;
+  font-family: Raleway-SemiBold, serif;
+}
+.total-sum{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.shipping-method{
+  display: flex;
+}
+.address-fields{
+  display: flex;
+}

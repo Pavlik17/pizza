@@ -24,11 +24,12 @@
         </product-cart>
       </ul>
     </div>
+    <div>Из хранилища:{{products_from_pinia.value}}</div>
   </div>
 </template>
 
 <script setup>
-import { ref } from "vue";
+import {computed, onMounted, ref} from "vue";
 import ProductCart from "@/components/ProductCart/ProductCart.vue";
 import BackandApiMainService from "@/services/BackandApiMainService.js";
 import {ProductDataStore} from "@/store/store.js";
@@ -39,6 +40,8 @@ let currentProductList = ref(...productsList.value);
 let categoriesProducts = ref([]);
 let activeCategoryId = ref(1);
 let activeCategory = ref(categoriesProducts.value);
+let products_from_pinia = computed(() => store.products_in_cart);
+
 
 
 (async () => {
@@ -50,15 +53,11 @@ let activeCategory = ref(categoriesProducts.value);
     currentProductList.value = [...productsList.value];
   } catch (e) {}
 })();
-
 function changeCategoryProducts(newCategoryId){
     activeCategoryId.value = newCategoryId;
     activeCategory.value = categoriesProducts.value.filter((item) => item.id === activeCategoryId.value)[0];
     currentProductList.value = productsList.value.filter((item) => item.category_id === activeCategoryId.value);
 }
-
-
-
 </script>
 
 <style lang="scss" scoped src="./style.scss"></style>

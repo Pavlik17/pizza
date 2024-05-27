@@ -1,5 +1,7 @@
 <template>
+
   <section class="footer">
+    <main-container>
     <div class="footer__container">
     <div class="container__logo-section">
       <div class="footer-logo-pizza"><pizza-logo class="footer-logo-pizza__image"></pizza-logo></div>
@@ -25,7 +27,9 @@
       <img src="../../../public/assets/footer_market_links.svg">
     </div>
     </div>
+    </main-container>
   </section>
+
 </template>
 
 <script setup>
@@ -34,6 +38,7 @@ import PizzaLogoTitle from "@/components/icons/PizzaLogoTitle/PizzaLogoTitle.vue
 import TwitterIcon from "@/components/icons/Twitter/TwitterIcon.vue";
 import VKIcon from "@/components/icons/VK/VKIcon.vue";
 import FacebookIcon from "@/components/icons/Facebook/FacebookIcon.vue";
+import MainContainer from "@/components/MainContainer/MainContainer.vue";
 </script>
 
 <style lang="scss" scoped src="./style.scss">
