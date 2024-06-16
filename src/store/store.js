@@ -2,46 +2,70 @@ import {defineStore} from "pinia";
 import {ref} from "vue";
 
 export const  ProductDataStore= defineStore('products_data',() => {
-    let total_price = ref(0);
-    let products_in_cart = ref(JSON.parse(localStorage.getItem('products_in_cart')));
-    function plusPrice(addedSum){
-        total_price.value = total_price.value + Number(addedSum);
-        localStorage.setItem('price',total_price.value);
-       // console.log('Плюс + ' + addedSum);
-        console.log('Итоговая цена: ' + total_price.value);
-    };
-    function minusPrice(addedSum){
-        total_price.value -=addedSum;
-        localStorage.setItem('price',total_price.value);
-    };
+        let total_price = ref(JSON.parse(localStorage.getItem('total_price')));
+        let array_products = ref(localStorage.getItem('products_cart')
+            ? JSON.parse(localStorage.getItem('products_cart'))
+            : []);
 
-    //добавляем, удаляем продукт в корзину
-    function addProductsInCart(title,description,price, id){
-        let addedProduct = {
-            //добавить путь к изображению
-            titleProduct: title,
-            descriptionProduct:description,
-            priceProduct:price,
-            idProduct:id,
+        const addProductsInCart = (productId, title, price, count) => {
+            const newProduct = {
+                idProduct: productId,
+                titleProduct:title,
+                priceProduct:price,
+                count,
+            };
+
+            const isProduct = array_products.value.find(product => product.idProduct === productId);
+
+            if (isProduct) {
+                array_products.value = array_products.value.map(product => {
+                    if (isProduct.idProduct === product.idProduct) {
+                        return {
+                            ...product,
+                            count: product.count + 1,
+                        }
+                    }
+
+                    return product;
+                });
+            } else {
+                array_products.value = [
+                    ...array_products.value,
+                    newProduct
+                ];
+            }
+
+            localStorage.setItem('products_cart', JSON.stringify(array_products.value));
         };
-            products_in_cart.value = [...products_in_cart.value, addedProduct];
-            localStorage.setItem('products_in_cart', JSON.stringify(products_in_cart.value));
-            plusPrice(addedProduct.priceProduct);
-        console.log('Массив в хранилище:');
-        console.log( products_in_cart);
+        const minusProductInCart = (productId) => {
+            let changeProduct = array_products.value.find(item => item.idProduct === productId);
+            if(changeProduct.count ===1){
+                changeProduct.count -=1;
+                array_products.value = array_products.value.filter(product => product.idProduct !== productId);
+            }
+                changeProduct.count -=1;
+            localStorage.setItem('products_cart', JSON.stringify(array_products.value));
+        }
+        const plusProductInCart = (productId) => {
+            let changeProduct = array_products.value.find(item => item.idProduct === productId);
+            changeProduct.count +=1;
+            localStorage.setItem('products_cart', JSON.stringify(array_products.value));
+        }
+        const removeProductFromCart = (idProduct) => {
+            array_products.value = array_products.value.filter(product => product.idProduct !== idProduct);
+            localStorage.setItem('products_cart', JSON.stringify(array_products.value));
+        };
+        const totalPriceProducts = () => {
+            return array_products.value.reduce((sumProduct, currentProduct) => sumProduct + currentProduct.priceProduct * currentProduct.count, 0);
+        };
 
-    };
-    //Доделать передачу продуктов в корзину
-    function removeProductFromCart(id_product){
-        let newProductsArray = productsInCart.value.filter(item => item.idProduct != id_product);
-        products_in_cart.value = [...newProductsArray];
-    };
     return {
         total_price,
-        plusPrice,
-        minusPrice,
+        array_products,
         addProductsInCart,
-        products_in_cart,
         removeProductFromCart,
+        totalPriceProducts,
+        minusProductInCart,
+        plusProductInCart,
     };
 });

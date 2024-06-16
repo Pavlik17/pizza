@@ -1,50 +1,34 @@
-<template>
-  <div class="cart-element">
-    <div class="product-image"></div>
-    <p class="product-name">name{{product_name}}</p>
-    <div class="quantity-panel">
-      <minus-cart-button></minus-cart-button>
-      <div class="quantity_products">quantity{{quantity_products.value}}</div>
-      <plus-cart-button></plus-cart-button>
-    </div>
-    <div class="price_product">price{{total_price.value}} р.</div>
-    <delete-product-cart-button></delete-product-cart-button>
-  </div>
-</template>
-
 <script setup>
 import MinusCartButton from "@/components/icons/MinusCartButton/MinusCartButton.vue";
 import PlusCartButton from "@/components/icons/PlusCartButton/PlusCartButton.vue";
-import {ref} from "vue";
-import DeleteProductCart from "@/components/icons/DeleteProductCartButton/DeleteProductCartButton.vue";
 import DeleteProductCartButton from "@/components/icons/DeleteProductCartButton/DeleteProductCartButton.vue";
-let quantity_products = ref(0);
-let total_price = ref(0);
+import {ProductDataStore} from "@/store/store.js";
 
+const store = ProductDataStore();
 const props = defineProps({
-      total_price:Number,
+      price:Number,
       product_name:String,
-      product_imgae:String,
+      product_image:String,
       idProduct:Number,
+      count: Number,
     }
 );
-function plusTotalPrice(plusValue){
-  total_price.value += plusValue;
-};
-function minusTotalPrice(minusValue){
-  total_price.value -= minusValue;
-};
-function plusQuantityProduct(plusValue){
-  quantity_products.value +=plusValue;
-};
-function minusQuantityProduct(minusValue){
-  quantity_products.value -=minusValue;
-};
-function deleteProductFromArray(id_product){
-
-}
 </script>
 
-<style lang="scss" scoped>
+<template>
+  <div class="cart-element">
+    <div class="product-image">
+      <img src="../../../public/assets/pizza_cart_image.png" alt="pizza">
+    </div>
+    <p class="product-name">{{props.product_name}}</p>
+    <div class="quantity-panel">
+      <minus-cart-button @click="store.minusProductInCart(idProduct)"/>
+      <div class="quantity_products">{{props.count}}</div>
+      <plus-cart-button @click="store.plusProductInCart(idProduct)"/>
+    </div>
+    <div class="price_product">{{props.price * props.count}} р.</div>
+    <delete-product-cart-button @click="store.removeProductFromCart(props.idProduct)"/>
+  </div>
+</template>
 
-</style>
+<style lang="scss" scoped src="./style.scss"></style>
