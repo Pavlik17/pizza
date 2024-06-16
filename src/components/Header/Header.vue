@@ -67,25 +67,15 @@ import CartButton from "@/components/icons/CartButton/CartButton.vue";
 import PizzaLogo from "@/components/icons/PizzaLogo/PizzaLogo.vue";
 import PizzaLogoTitle from "@/components/icons/PizzaLogoTitle/PizzaLogoTitle.vue";
 import MobileMenuButton from "@/components/icons/MobileMenuButton/MobileMenuButton.vue";
-import {onMounted, ref} from "vue";
+import {ref} from "vue";
 import MainContainer from "@/components/MainContainer/MainContainer.vue";
 import ShopCart from "@/components/icons/ShopCart/ShopCart.vue";
 
-let showMobileMenu = ref(false);
-let showBottomHeader = ref(true);
-let currentWindowSize = 0;
+const showMobileMenu = ref(false);
+const showBottomHeader = ref(true);
+const changeShowMobileMenu = () => showMobileMenu.value = !showMobileMenu.value;
 
-if(location.pathname !== '/'){showBottomHeader.value = false};
-function changeShowBottomHeader() {
-  console.log('Before: '+ showBottomHeader.value);
-  showBottomHeader.value = false;
-  console.log('After:' + showBottomHeader.value);
-}
-function changeShowMobileMenu(){
-  showMobileMenu.value = !showMobileMenu.value;
-  console.log(showMobileMenu)
-}
-
+if(location.pathname !== '/') showBottomHeader.value = false;
 </script>
 <style src="./style.scss" scoped>
 </style>

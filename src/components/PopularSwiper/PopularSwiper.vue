@@ -3,38 +3,35 @@ import ArrowPrevSlider from "@/components/icons/ArrowPrewSlider/ArrowPrevSlider.
 import ArrowNextSlider from "@/components/icons/ArrowNextSlider/ArrowNextSlider.vue";
 import {Swiper, SwiperSlide} from "swiper/vue";
 import {Navigation} from "swiper/modules";
-import {ref} from "vue";
-const modules = [Navigation];
+import 'swiper/css';
 
-/*const numberOfSlides = ref(3);
-function handleResize(){
-  if(document.documentElement.clientWidth >= 1320){
-    numberOfSlides.value = 3;
-  }
-  else if(document.documentElement.clientWidth < 1200 && document.documentElement.clientWidth > 850){
-    numberOfSlides.value = 2;
-  }
-  else if(document.documentElement.clientWidth < 850 && document.documentElement.clientWidth > 800){
-    numberOfSlides.value = 2;
-  }
-  else if(document.documentElement.clientWidth < 800){
-    numberOfSlides.value = 1;
+const modules = [Navigation];
+const navigation = {
+  prevEl:'.prev-popular-button',
+  nextEl:'.next-popular-button',
+};
+const breakpoints = {
+  499: {
+    slidesPerView: 1,
+    spaceBetweenSlides: 50
+  },
+  999: {
+    slidesPerView: 3,
+    spaceBetweenSlides: 50
   }
 };
-//window.addEventListener('resize', handleResize);*/
 </script>
+
 <template>
   <div class="swiper-populars-container">
     <arrow-prev-slider class="prev-popular-button"></arrow-prev-slider>
     <swiper class="swiper-popular"
-            :navigation="{
-              prevEl:'.prev-popular-button',
-              nextEl:'.next-popular-button',
-            }"
-            :space-between="30"
-            :modules="modules"
-            :speed="100"
-            :loop="true"
+      :navigation="navigation"
+      :modules="modules"
+      :speed="100"
+      :loop="true"
+      :slides-per-view="3"
+      :breakpoints="breakpoints"
     >
       <swiper-slide class="popular-slide"><img class="popular-img" src="../../../public/assets/derev_slide.png" alt="slide"></swiper-slide>
       <swiper-slide class="popular-slide"><img class="popular-img" src="../../../public/assets/barbecu_slide.png" alt="slide"></swiper-slide>
@@ -46,8 +43,4 @@ function handleResize(){
   </div>
 </template>
 
-
-
-<style lang="scss" scoped src="./style.scss">
-
-</style>
+<style lang="scss" scoped src="./style.scss"></style>

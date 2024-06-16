@@ -21,7 +21,7 @@ const store = ProductDataStore();
     <p class="product-cart__description-product">{{props.descriptionProduct}}</p>
     <div class="product-cart__footer-cart">
       <div class="price-product">от {{props.priceProduct}} р.</div>
-      <button-menu class="choose-button" v-on:click="store.addProductsInCart(props.titleProduct,props.descriptionProduct,props.priceProduct,props.idProduct)"></button-menu>
+      <button-menu class="choose-button" @click="store.addProductsInCart(props.idProduct, props.titleProduct,props.priceProduct, 1)"></button-menu>
     </div>
   </div>
 </template>
