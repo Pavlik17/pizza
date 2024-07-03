@@ -10,10 +10,9 @@
          :id-product = "item.idProduct"
      />
     <div class="total-sum">
-      <p class="total">Итого:</p>
+      <p class="total">Итого: </p>
       <p class="total_prise"> {{store.totalPriceProducts()}} р.</p>
     </div>
-     <order-button-cart></order-button-cart>
    </main-container>
     <main-container>
       <order-information/>

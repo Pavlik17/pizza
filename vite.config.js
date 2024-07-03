@@ -11,6 +11,15 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
+    },
+  },
+  server: {
+    proxy: {
+      '/send-order': {
+        target: 'http://localhost:8060/basket/send-order',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/send-order/, ''),
+      },
     }
-  }
+  },
 })

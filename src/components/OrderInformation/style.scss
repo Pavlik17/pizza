@@ -1,6 +1,317 @@
+.order-information{
+  font-size: 24px;
+  font-weight: 500;
+  font-family: Raleway-SemiBold, serif;
+}
 .shipping-method{
   display: flex;
 }
+.input_field_name {
+  width: 653px;
+  height: 72px;
+  background-color: #FAF8F8;
+  border-radius: 45px;
+  border:none;
+  font-size: 25px;
+  padding-left: 20px;
+}
+.input_field_name_is_empty {
+  width: 653px;
+  height: 72px;
+  background-color: #FAF8F8;
+  border-radius: 45px;
+  border:none;
+  font-size: 25px;
+  padding-left: 20px;
+}
+.validation_failed_input_name{
+  border-color: #ff1313;
+  width: 653px;
+  height: 72px;
+  background-color: #FAF8F8;
+  border-radius: 45px;
+  font-size: 25px;
+  padding-left: 20px;
+}
+
+.fields-phone-numbers{
+  display: flex;
+  border:none;
+  font-size: 25px;
+}
+.code_country{
+  width: 132px;
+  height: 72px;
+  background-color: #FAF8F8;
+  border-radius: 45px;
+  border:none;
+  font-size: 25px;
+  padding-left: 20px;
+}
+.validation_failed_code_country{
+  width: 132px;
+  height: 72px;
+  background-color: #FAF8F8;
+  border-radius: 45px;
+  border-color: #ff1313;
+  font-size: 25px;
+  padding-left: 20px;
+}
+.phone_number{
+  margin-left: 19px;
+  width: 503px;
+  height: 72px;
+  background-color: #FAF8F8;
+  border-radius: 45px;
+  border:none;
+  font-size: 25px;
+  padding-left: 20px;
+}
+.validation_failed_phone_number {
+  margin-left: 19px;
+  width: 503px;
+  height: 72px;
+  background-color: #FAF8F8;
+  border-radius: 45px;
+  border-color: #ff1313;
+  font-size: 25px;
+  padding-left: 20px;
+}
 .address-fields{
   display: flex;
+  border:none;
+  font-size: 25px;
 }
+.street{
+  width: 458px;
+  height: 72px;
+  margin-left: 8px;
+  margin-right: 8px;
+  background-color: #FAF8F8;
+  border-radius: 45px;
+  border:none;
+  font-size: 25px;
+  padding-left: 20px;
+}
+.validation_failed_street{
+  width: 458px;
+  height: 72px;
+  margin-left: 8px;
+  margin-right: 8px;
+  background-color: #FAF8F8;
+  border-radius: 45px;
+  border-color: #ff1313;
+  font-size: 25px;
+  padding-left: 20px;
+}
+
+.home{
+  width: 147px;
+  height: 72px;
+  background-color: #FAF8F8;
+  border-radius: 45px;
+  margin-left: 8px;
+  margin-right: 8px;
+  border:none;
+  font-size: 25px;
+  padding-left: 20px;
+}
+.validation_failed_home{
+  width: 147px;
+  height: 72px;
+  background-color: #FAF8F8;
+  border-radius: 45px;
+  margin-left: 8px;
+  margin-right: 8px;
+  border-color: #ff1313;
+  font-size: 25px;
+  padding-left: 20px;
+}
+.entrance{
+  width: 165px;
+  height: 72px;
+  border-radius: 45px;
+  background-color: #FAF8F8;
+  margin-left: 8px;
+  margin-right: 8px;
+  border:none;
+  font-size: 25px;
+  padding-left: 20px;
+}
+.validation_failed_entrance{
+  width: 165px;
+  height: 72px;
+  border-radius: 45px;
+  background-color: #FAF8F8;
+  margin-left: 8px;
+  margin-right: 8px;
+  border-color: #ff1313;
+  font-size: 25px;
+  padding-left: 20px;
+}
+.flat{
+  width: 165px;
+  height: 72px;
+  border-radius: 45px;
+  background-color: #FAF8F8;
+  margin-left: 8px;
+  margin-right: 8px;
+  border:none;
+  font-size: 25px;
+  padding-left: 20px;
+}
+.validation_failed_flat{
+  width: 165px;
+  height: 72px;
+  border-radius: 45px;
+  background-color: #FAF8F8;
+  margin-left: 8px;
+  margin-right: 8px;
+  border-color: #ff1313;
+  font-size: 25px;
+  padding-left: 20px;
+}
+
+.floor{
+  width:141px;
+  height: 72px;
+  border-radius: 45px;
+  background-color: #FAF8F8;
+  margin-left: 8px;
+  margin-right: 8px;
+  border:none;
+  font-size: 25px;
+  padding-left: 20px;
+}
+.validation_failed_floor{
+  width:141px;
+  height: 72px;
+  border-radius: 45px;
+  background-color: #FAF8F8;
+  margin-left: 8px;
+  margin-right: 8px;
+  border-color: #ff1313;
+  font-size: 25px;
+  padding-left: 20px;
+}
+
+.shipping_method__delivery{
+  font-size: 34px;
+  color: #A4A4A4;
+  cursor: pointer;
+}
+.shipping_method__delivery_visited {
+  color: red;
+  text-decoration: underline;
+}
+.shipping_method__pickup{
+  font-size: 34px;
+  color:#A4A4A4;
+  margin-left: 56px;
+  cursor: pointer;
+}
+.shipping_method__pickup_visited{
+  color: red;
+  text-decoration: underline;
+}
+.pick-up-time__question{
+  font-size: 24px;
+  font-weight: 700;
+  color: #ff1313;
+  padding-top: 120px;
+  padding-bottom: 58px;
+}
+.pick-up-time_times{
+  display: flex;
+}
+.time-button{
+  width: 148px;
+  height: 71px;
+  border: none;
+  border-radius: 45px;
+  background-color: #FFFFFF;
+  font-size: 20px;
+  font-weight: 600;
+  font-family: Raleway-SemiBold, serif;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  margin-left: 6px;
+  margin-right: 6px;
+  cursor: pointer;
+}
+.payment-buttons{
+  padding-bottom: 160px;
+}
+.cash-payment-button{
+  width: 277px;
+  height: 88px;
+  border-radius: 45px;
+  border: none;
+  font-size: 20px;
+  font-weight: 600;
+  font-family: Raleway-SemiBold, serif;
+  background-color: #FFFFFF;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  cursor: pointer;
+}
+.bank-card-button{
+  background-color: #FFFFFF;
+  width: 277px;
+  height: 88px;
+  border-radius: 45px;
+  border:none;
+  margin-left: 16px;
+  font-size: 20px;
+  font-weight: 600;
+  font-family: Raleway-SemiBold, serif;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  cursor: pointer;
+}
+.total-sum{
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  align-items: center;
+  padding-top: 64px;
+  padding-bottom: 56px;
+}
+.total{
+  font-size: 24px;
+  font-weight: 700;
+  padding-top: 10px;
+  padding-right: 24px;
+}
+.total_prise{
+  color: #ff1313;
+  font-size: 38px;
+}
+.payment-method{
+  padding-top: 120px;
+  display: flex;
+  flex-direction: column;
+}
+.payment-method-title{
+  padding-bottom: 60px;
+  color: #ff1313;
+  font-size: 24px;
+  font-weight: 700;
+}
+.order-button-cart-1{
+  display: flex;
+  justify-content: center;
+  max-width: 310px;
+  max-height: 70px;
+  margin: 0 auto;
+  padding-bottom: 34px;
+  cursor: pointer;
+}
+
+.return-change-order-button{
+  font-size: 18px;
+  font-weight: 500;
+  color: #ff1313;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 164px;
+  cursor: pointer;
+}
+

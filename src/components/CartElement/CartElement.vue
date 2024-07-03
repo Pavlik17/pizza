@@ -27,7 +27,7 @@ const props = defineProps({
       <plus-cart-button @click="store.plusProductInCart(idProduct)"/>
     </div>
     <div class="price_product">{{props.price * props.count}} р.</div>
-    <delete-product-cart-button @click="store.removeProductFromCart(props.idProduct)"/>
+    <delete-product-cart-button class="delete-product-cart-button" @click="store.removeProductFromCart(props.idProduct)"/>
   </div>
 </template>
 
