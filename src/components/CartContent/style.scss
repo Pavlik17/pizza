@@ -32,3 +32,32 @@
   color: #ff1313;
   font-size: 38px;
 }
+.address-fields{
+  width: 100%;
+}
+
+@media (max-width: 1300px){
+  .main-container{
+    max-width: 1000px;
+  }
+  .total_prise{
+    font-size: 30px;
+  }
+}
+@media (max-width: 1100px) {
+  .main-container{
+    max-width: 800px;
+  }
+  .cart-title{
+    font-size: 40px;
+  }
+  .total{
+    font-size: 20px;
+  }
+  .total_prise{
+    font-size: 30px;
+  }
+}
+@media (max-width: 850px) {
+
+}

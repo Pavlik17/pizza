@@ -81,6 +81,7 @@
   display: flex;
   border:none;
   font-size: 25px;
+  flex-wrap: wrap;
 }
 .street{
   width: 458px;
@@ -315,3 +316,115 @@
   cursor: pointer;
 }
 
+@media (max-width: 1100px) {
+  .user-name{
+    font-size: 20px;
+  }
+  .input_field_name{
+    width: 600px;
+    height: 60px;
+  }
+  .validation_failed_input_name{
+    width: 600px;
+    height: 60px;
+  }
+  .code_country{
+    width: 120px;
+    height: 60px;
+  }
+  .validation_failed_code_country{
+    width: 120px;
+    height: 60px;
+  }
+  .phone_number{
+    width: 440px;
+    height: 60px;
+  }
+  .validation_failed_phone_number{
+    width: 440px;
+    height: 60px;
+  }
+  .street{
+    width: 370px;
+    height: 60px;
+  }
+  .validation_failed_street{
+    width: 370px;
+    height: 60px;
+  }
+  .home{
+    width: 120px;
+    height: 60px;
+  }
+  .validation_failed_home{
+    width: 120px;
+    height: 60px;
+  }
+  .entrance{
+    width: 120px;
+    height: 60px;
+  }
+  .validation_failed_entrance{
+    width: 120px;
+    height: 60px;
+  }
+  .flat{
+    width: 120px;
+    height: 60px;
+  }
+  .validation_failed_flat{
+    width: 120px;
+    height: 60px;
+  }
+  .floor{
+    width: 120px;
+    height: 60px;
+  }
+  .validation_failed_floor{
+    width: 120px;
+    height: 60px;
+  }
+  .phone-number-user{
+    font-size: 20px;
+  }
+  .address-fields{
+    font-size: 20px;
+  }
+  .shipping_method__delivery{
+    font-size: 30px;
+  }
+  .shipping_method__pickup{
+    font-size: 30px;
+  }
+  .order-button-cart-1 {
+    max-width: 260px;
+  }
+  .return-change-order-button{
+    font-size: 15px;
+  }
+  .total{
+    font-size: 20px;
+  }
+  .total_prise{
+    font-size: 30px;
+  }
+  .payment-method-title{
+    font-size: 20px;
+  }
+  .payment-buttons{
+    padding-bottom: 80px;
+  }
+  .cash-payment-button{
+    width: 230px;
+    height: 70px;
+    font-size: 15px;
+  }
+  .bank-card-button{
+    width: 230px;
+    height: 70px;
+    font-size: 15px;
+  }
+}
+@media (max-width: 850px) {
+
+}

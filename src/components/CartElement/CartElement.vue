@@ -18,13 +18,13 @@ const props = defineProps({
 <template>
   <div class="cart-element">
     <div class="product-image">
-      <img src="../../../public/assets/pizza_cart_image.png" alt="pizza">
+      <img class="image" src="../../../public/assets/pizza_cart_image.png" alt="pizza">
     </div>
     <p class="product-name">{{props.product_name}}</p>
     <div class="quantity-panel">
-      <minus-cart-button @click="store.minusProductInCart(idProduct)"/>
+      <minus-cart-button class="minus_quantity_button" @click="store.minusProductInCart(idProduct)"/>
       <div class="quantity_products">{{props.count}}</div>
-      <plus-cart-button @click="store.plusProductInCart(idProduct)"/>
+      <plus-cart-button class="add_quantity_button" @click="store.plusProductInCart(idProduct)"/>
     </div>
     <div class="price_product">{{props.price * props.count}} р.</div>
     <delete-product-cart-button class="delete-product-cart-button" @click="store.removeProductFromCart(props.idProduct)"/>
