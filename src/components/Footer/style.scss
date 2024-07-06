@@ -90,6 +90,12 @@
   .footer{
     width: 100%;
   }
+  .footer__container{
+    flex-wrap: wrap;
+  }
+  .footer-logo-pizza{
+    display: none;
+  }
   .contacts{
     display: none;
   }
@@ -119,8 +125,8 @@
     align-items: center;
     margin: 0 auto;
   }
-  .footer-logo-pizza__image{
-    position: static;
+  .footer-logo-pizza{
+    display: none;
   }
  .menu{
    padding-left: 0;
@@ -139,6 +145,9 @@
 @media (min-width: 320px) and (max-width: 490px){
   .footer{
     width: 100%;
+  }
+  .footer-logo-pizza{
+    display: none;
   }
   .menu__footer-list-element{
     font-size: 13px;

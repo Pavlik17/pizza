@@ -59,5 +59,29 @@
   }
 }
 @media (max-width: 850px) {
+  .main-container{
+    max-width: 580px;
+  }
+  .cart-title{
+    font-size: 35px;
+    padding-top: 60px;
+    padding-bottom: 30px;
+  }
+  .total-sum{
+    padding-bottom: 30px;
+  }
+  .total{
+    font-size: 15px;
+  }
+  .total_prise{
+    font-size: 25px;
+  }
+}
+@media (max-width: 630px){
+.main-container{
+  display: flex;
+}
+}
+@media (min-width: 320px) and (max-width: 490px){
 
 }

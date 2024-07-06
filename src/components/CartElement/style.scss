@@ -20,7 +20,6 @@
   font-family: Raleway-Regular Raleway-SemiBold, serif;
   font-size: 28px;
   font-weight: 600;
-
 }
 .quantity-panel{
   display: flex;
@@ -42,6 +41,9 @@
   margin-top: -100px;
 
 }
+.mobile-cart-element{
+  display: none;
+}
 @media (max-width: 1300px){
   .cart-title{
     font-size: 45px;
@@ -56,6 +58,9 @@
   .price_product{
     font-size: 25px;
     padding-left: 140px;
+  }
+  .mobile-cart-element{
+    display: none;
   }
 }
 @media (max-width: 1100px) {
@@ -74,7 +79,7 @@
   }
   .price_product{
     padding-left: 80px;
-    font-size: 20px;
+    font-size: 15px;
   }
   .image{
     max-width: 100px;
@@ -82,8 +87,96 @@
   .delete-product-cart-button{
     margin-top: -70px;
   }
+  .mobile-cart-element{
+    display: none;
+  }
 }
 
 @media (max-width: 850px) {
-  
+  .image{
+    max-width: 80px;
+  }
+  .product-name{
+    padding-right: 40px;
+    font-size:15px;
+  }
+  .minus_quantity_button{
+    max-width: 25px;
+  }
+  .quantity_products{
+    font-size: 20px;
+  }
+  .add_quantity_button{
+    max-width: 25px;
+  }
+  .price_product{
+    padding-left: 40px;
+  }
+  .delete-product-cart-button{
+    max-width: 30px;
+  }
+  .mobile-cart-element{
+    display: none;
+  }
+}
+@media (max-width: 650px) {
+  .cart-element{
+    display: none;
+  }
+  .mobile-cart-element{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+  }
+  .mobile-product-image{
+    margin: 0 auto;
+  }
+  .mobile-product-name{
+    color: #FF1313;
+    font-family: Raleway-Regular Raleway-SemiBold, serif;
+    font-size:15px;
+    font-weight: 600;
+    margin: 0 auto;
+    padding-top: 10px;
+  }
+  .mobile-quantity-price{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding-top: 15px;
+  }
+  .mobile-quantity-panel{
+    display: flex;
+    flex-direction: row;
+  }
+  .mobile-minus_quantity_button{}
+  .mobile-quantity_products{
+    padding-left: 6px;
+    padding-right: 6px;
+    font-size: 32px;
+    color: #ff1313;
+  }
+  .mobile-add_quantity_button{}
+  .mobile-price_product{
+    font-size: 28px;
+    color: #ff1313;
+    margin: 0 auto;
+    padding-top: 20px;
+  }
+  .mobile-delete-product-cart-button{
+    height: 25px;
+    border-radius: 50px;
+    margin-top: 20px;
+    border:2px solid #d3d3d3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #faf8f8;
+  }
+}
+@media (min-width: 320px) and (max-width: 490px){
+  .cart-element{
+    display: none;
+  }
 }

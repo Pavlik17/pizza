@@ -323,66 +323,82 @@
   .input_field_name{
     width: 600px;
     height: 60px;
+    font-size: 20px;
   }
   .validation_failed_input_name{
     width: 600px;
     height: 60px;
+    font-size: 20px;
   }
   .code_country{
     width: 120px;
     height: 60px;
+    font-size: 20px;
   }
   .validation_failed_code_country{
     width: 120px;
     height: 60px;
+    font-size: 20px;
   }
   .phone_number{
     width: 440px;
     height: 60px;
+    font-size: 20px;
   }
   .validation_failed_phone_number{
     width: 440px;
     height: 60px;
+    font-size: 20px;
   }
   .street{
     width: 370px;
     height: 60px;
+    font-size: 20px;
   }
   .validation_failed_street{
     width: 370px;
     height: 60px;
+    font-size: 20px;
   }
   .home{
     width: 120px;
     height: 60px;
+    font-size: 20px;
   }
   .validation_failed_home{
     width: 120px;
     height: 60px;
+    font-size: 20px;
   }
   .entrance{
     width: 120px;
     height: 60px;
+    font-size: 20px;
   }
   .validation_failed_entrance{
     width: 120px;
     height: 60px;
+    font-size: 20px;
   }
   .flat{
     width: 120px;
     height: 60px;
+    font-size: 20px;
   }
   .validation_failed_flat{
     width: 120px;
     height: 60px;
+    font-size: 20px;
   }
   .floor{
     width: 120px;
     height: 60px;
+    font-size: 20px;
   }
   .validation_failed_floor{
     width: 120px;
     height: 60px;
+    font-size: 20px;
   }
   .phone-number-user{
     font-size: 20px;
@@ -408,6 +424,14 @@
   .total_prise{
     font-size: 30px;
   }
+  .pick-up-time__question{
+    font-size: 20px;
+  }
+  .time-button{
+    width: 120px;
+    height: 50px;
+    font-size: 15px;
+  }
   .payment-method-title{
     font-size: 20px;
   }
@@ -426,5 +450,64 @@
   }
 }
 @media (max-width: 850px) {
+  .shipping_method__delivery_visited{
+    font-size: 25px;
+  }
+  .shipping_method__delivery{
+    font-size: 25px;
+  }
+  .shipping_method__pickup{
+    font-size: 25px;
+  }
+  .shipping_method__pickup_visited{
+    font-size: 25px;
+  }
+  .input_field_name{
+    max-width: 550px;
+  }
+  .validation_failed_input_name{
+    max-width: 550px;
+  }
+  .code_country{
+    max-width: 100px;
+  }
+  .validation_failed_code_country{
+    max-width: 100px;
+  }
+  .phone_number{
+    max-width: 400px;
+  }
+  .validation_failed_phone_number{
+    max-width: 400px;
+  }
+  .home{
+    max-width: 100px;
+  }
+  .validation_failed_home{
+    max-width: 100px;
+  }
+  .entrance{
+    max-width: 100px;
+  }
+  .validation_failed_entrance{
+    max-width: 100px;
+  }
+  .flat{
+    max-width: 100px;
+  }
+  .validation_failed_flat{
+    max-width: 100px;
+  }
+  .floor{
+    max-width: 100px;
+  }
+  .validation_failed_floor{
+    max-width: 100px;
+  }
+}
+@media (max-width: 650px){
+
+}
+@media (min-width: 320px) and (max-width: 490px){
 
 }
