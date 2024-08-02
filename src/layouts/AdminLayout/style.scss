@@ -1,0 +1,17 @@
+.admin-layout{
+    background-color:#FAFAFA;
+    min-height: 100vh;
+}
+.welcome-in-admin-panel{
+    font-size: 56px;
+    font-weight: 600;
+    line-height: 74px;
+    color: #121010;
+    font-family: Ralewey-Semibold;
+}
+
+@media (min-width:800px) and (max-width: 999px){
+    .welcome-in-admin-panel{
+        font-size: 45px;
+    }
+}

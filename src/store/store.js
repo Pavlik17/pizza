@@ -6,7 +6,7 @@ export const  ProductDataStore= defineStore('products_data',() => {
         let array_products = ref(localStorage.getItem('products_cart')
             ? JSON.parse(localStorage.getItem('products_cart'))
             : []);
-
+        let authToken = ref(localStorage.getItem('token'));
         const addProductsInCart = (productId, title, price, count) => {
             const newProduct = {
                 idProduct: productId,
@@ -62,6 +62,7 @@ export const  ProductDataStore= defineStore('products_data',() => {
     return {
         total_price,
         array_products,
+        authToken,
         addProductsInCart,
         removeProductFromCart,
         totalPriceProducts,
@@ -69,3 +70,5 @@ export const  ProductDataStore= defineStore('products_data',() => {
         plusProductInCart,
     };
 });
+
+export default ProductDataStore;

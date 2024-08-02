@@ -1,0 +1,103 @@
+.admin-panel-view{
+    background-color: #FAFAFA;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.stocks-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.admin-panel-header{
+    color: #121010;
+    font-size: 62px;
+    margin-top: 131px;
+    margin-bottom: 113px;
+    font-weight: 700;
+}
+.stocks-header{
+    color:#121010;
+    font-size: 50px;
+    margin-bottom: 18px;
+}
+.stocks-description{
+    color: #333333;
+    font-size:14px;
+    margin-bottom: 69px;
+}
+.add-stocks-product{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 360px;
+    max-height: 225px;
+    padding: 72px 141px 72px 141px;
+    border-radius: 35px;
+    background-color: #D3D3D3;
+    border:none;
+    margin-right: 30px;
+}
+.add-stocks-product:hover{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 360px;
+    max-height: 225px;
+    padding: 72px 141px 72px 141px;
+    border-radius: 35px;
+    background-color: #D3D3D3;
+    border:1px solid black;
+    margin-right: 30px;
+}
+.stocks-list{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.popular-container{
+    display: flex;
+    flex-direction: column;
+}
+.populars-title{
+    font-size: 28px;
+    font-weight: 700;
+    color: #FF1313;
+}
+.add-often-product{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 360px;
+    max-height: 135px;
+    padding: 35px 152px 34px 152px;
+    border-radius: 35px;
+    background-color: #D3D3D3;
+    border:none;
+    margin-right: 30px;
+}
+.add-often-product:hover{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 360px;
+    max-height: 135px;
+    padding: 35px 152px 34px 152px;
+    border-radius: 35px;
+    background-color: #D3D3D3;
+    border:1px solid black;
+    margin-right: 30px;
+}
+
+.menu-header{
+    color: #121010;
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 65.01px;
+}
+.menu-description{
+    color: #333333;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+}

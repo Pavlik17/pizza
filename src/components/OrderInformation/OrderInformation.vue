@@ -163,9 +163,9 @@
     console.log(form);
     if (resultValidation){
       await axios.post('/send-order', form);
-      console.log("Валидация прошла успешно.");
+      alert('Заказ принят в обработку.')
     }else {
-      console.log("Ошибка валидации.");
+      alert("Проверьте правильность введенных данных.");
     }
     //преобразуем в JSON
   };
