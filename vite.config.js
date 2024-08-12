@@ -30,6 +30,16 @@ export default defineConfig({
         changeOrigin:true,
         rewrite: (path) => path.replace(/^\/auth/, ''),
       },
+      '/add-image-stocks-populars':{
+        target:'http://localhost:8060/add-image-stocks-populars',
+        changeOrigin:true,
+        rewrite: (path) => path.replace(/^\/add-image-stocks-populars/, ''),
+      },
+      '/add-image-menu-products':{
+        target:'http://localhost:8060/add-image-menu-products',
+        changeOrigin:true,
+        rewrite: (path) => path.replace(/^\/add-image-menu-products/, ''),
+      },
     }
   },
 })

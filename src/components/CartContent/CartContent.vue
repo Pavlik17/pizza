@@ -25,7 +25,6 @@
 import MainContainer from "@/components/MainContainer/MainContainer.vue";
 import CartElement from "@/components/CartElement/CartElement.vue";
 import {ProductDataStore} from "@/store/store.js";
-import OrderButtonCart from "@/components/icons/OrderButtonCart/OrderButtonCart.vue";
 import OrderInformation from "@/components/OrderInformation/OrderInformation.vue";
 
 const store = ProductDataStore();

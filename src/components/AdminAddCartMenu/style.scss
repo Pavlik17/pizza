@@ -1,0 +1,81 @@
+.admin-add-cart-menu{
+    display: flex;
+    flex-direction: column;
+    max-width: 270px;
+}
+.name-field{
+    color: #333333;
+    font-size: 8px;
+    font-weight: 400;
+    line-height: 10px;
+    margin-bottom: 4px;
+}
+.add-cart-button{
+    max-width: 263px;
+    max-height: 263px;
+    padding: 110px;
+    background-color: #D3D3D3;
+    border:none;
+    margin-bottom: 9px;
+}
+.add-cart-button:hover{
+    max-width: 263px;
+    max-height: 263px;
+    padding: 109px;
+    background-color: #D3D3D3;
+    border:1px solid black;
+}
+.field-name{
+    max-width: 263px;
+    max-height: 40px;
+    border-radius: 11px;
+    width: 263px;
+    height: 40px;
+    border:none;
+    box-shadow: 0px 0px 10px 1px rgba(150, 150, 150, 0.25);
+    margin-bottom: 12px;
+}
+.filed-description{
+    max-width: 263px;
+    max-height: 81px;
+    border-radius: 11px;
+    width: 263px;
+    height: 81px;
+    border:none;
+    box-shadow: 0px 0px 10px 1px rgba(150, 150, 150, 0.25);
+    margin-bottom: 12px;
+}
+.field-price{
+    max-width: 263px;
+    max-height: 40px;
+    border-radius: 11px;
+    width: 263px;
+    height: 40px;
+    border:none;
+    box-shadow: 0px 0px 10px 1px rgba(150, 150, 150, 0.25);
+    margin-bottom: 16px;
+}
+.save-button{
+    background-color: #FF1313;
+    width: 114px;
+    height:32px;
+    border-radius: 23px;
+    border: none;
+    color: white;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 14px;
+    margin-left: auto;
+}
+.save-button:hover{
+    background-color: #D3D3D3;
+    width: 114px;
+    height:32px;
+    border-radius: 23px;
+    border: none;
+    color: white;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 14px;
+    margin-left: auto;
+}
