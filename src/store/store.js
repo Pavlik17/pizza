@@ -7,6 +7,7 @@ export const  ProductDataStore= defineStore('products_data',() => {
             ? JSON.parse(localStorage.getItem('products_cart'))
             : []);
         let authToken = ref(localStorage.getItem('token'));
+        
         const addProductsInCart = (productId, title, price, count) => {
             const newProduct = {
                 idProduct: productId,

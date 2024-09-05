@@ -1,15 +1,16 @@
 <template>
     <div class="stocks-cart-component">
             <delete-cart-btn-admin></delete-cart-btn-admin>
+            {{props.imagePath}}
+            <p>a</p>
             <img src="">
-        <img class="stocks-image"\>
     </div>
 </template>
 
 <script setup>
     import DeleteCartBtnAdmin from '../icons/DeleteCartBtnAdmin/DeleteCartBtnAdmin.vue';
     const props = defineProps({
-        imagePath:String,
+        imagePath:null,
     });
 </script>
 

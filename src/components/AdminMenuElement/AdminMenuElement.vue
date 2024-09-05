@@ -1,10 +1,10 @@
 <template>
     <div class="admin-menu-element">
         <div class="admin-menu">
-            <!--тут отображаем одну категорию продуктов и клмпонент добавления продукта привязанный к категории продукта -->
             <admin-add-cart-menu></admin-add-cart-menu>
-            <!--добавить обертку для кнопки добавления продукта-->
+            <!--тут отображаем одну категорию продуктов и клмпонент добавления продукта привязанный к категории продукта -->
             <admin-product-cart></admin-product-cart>
+            <!--добавить обертку для кнопки добавления продукта-->
         </div>
     </div>
 </template>
@@ -17,7 +17,7 @@ const sendProductMenu = async () =>{
   const file = document.getElementById().files[0];
   const formData = new FormData();
   formData.append('stocksImage', file);
-  await axios.post('/add-image-menu-produts/add-image',{fileImage:formData},{
+  await axios.post('/add-image-menu-produts/add-image',{imageFile:formData,categoryId:props.categoryId},{
     headers:{
       'Content-Type': 'multipart/form-data',
     }
@@ -25,7 +25,7 @@ const sendProductMenu = async () =>{
 };
 
 const props = defineProps({
-    category:String,
+    categoryId:Number,
 })
 
 (async () => {

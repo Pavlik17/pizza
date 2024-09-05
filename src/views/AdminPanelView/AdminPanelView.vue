@@ -12,9 +12,14 @@
               <plus-icon-one></plus-icon-one>
               <label class="image_file_stocks" for="stocks_image_file"></label>
             </div>
-            <ul class="stocks-list"></ul>
+            
+            <ul class="stocks-list">
+              <!--массив изображений-->
+              <stocks-cart-component v-for="item in imagesStocks.value" :image-path="item.stocks"></stocks-cart-component>
+              
+            </ul>
           </div>
-          <input type="file" ref="stocks_input" id="stocks_image_file" v-on:change="sendStocksImage()" accept=".jpg, .jpeg, .png"  style="display: none;">
+          <input type="file" ref="stocks_input" id="stocks_image_file" @change="sendStocksImage" v-on:click="changeIdType(1)" accept=".jpg, .jpeg, .png">
         </div>
 
         <div class="popular-container">
@@ -25,9 +30,12 @@
               <plus-icon-two class="plus-icon-two"></plus-icon-two>
               <label type="file" class="image_populars_file" for="populars_image_file"></label>
             </div>
-            <ul class="often-list"></ul>
+            <ul class="often-list" >
+               <!--массив изображений-->
+               <populars-cart-component></populars-cart-component>
+            </ul>
           </div>
-          <input type="file" ref="populars_input" id="populars_image_file"  accept=".jpg, .jpeg, .png" v-on:change="sendPopularImage()"  style="display: none;">
+          <input type="file" ref="populars_input" id="populars_image_file"  accept=".jpg, .jpeg, .png" v-on:change="sendPopularImage()" v-on:click="changeIdType(2)" style="display: none;">
         </div>
 
       </main-container>
@@ -43,6 +51,7 @@
 
 <script setup>
 import { onMounted } from 'vue';
+import { ref } from 'vue';
 import router from '@/router';
 import axios from 'axios';
 import MainContainer from '@/components/MainContainer/MainContainer.vue';
@@ -50,28 +59,61 @@ import PlusIconOne from '../../components/icons/PlusIconsAdmin/PlusIconOne.vue';
 import PlusIconTwo from '@/components/icons/PlusIconsAdmin/PlusIconTwo.vue';
 import AdminMenuElement from '@/components/AdminMenuElement/AdminMenuElement.vue';
 import BackandApiMainService from '@/services/BackandApiMainService';
+import StocksCartComponent from '@/components/StocksCartComponent/StocksCartComponent.vue';
 
+const imagesStocks = ref([]);
+const imagesPopulars = ref([]);
+const categoriesMenuProducts = ref([]);
+const idTipe = ref(null);
 
-const sendStocksImage = async () => {
-  const file = document.getElementById("stocks_image_file").files[0];
-  const formData = new FormData();
-  formData.append('stocksImage', file);
-  await axios.post('/add-image-stocks-populars/add-image',{fileImage:formData, idType:1},{
-    headers:{
-      'Content-Type': 'multipart/form-data',
+const changeIdType = (num) => {
+  idTipe.value = num;
+};
+
+const getImages =  async() => {
+  try{
+    const responseStocks = await axios.get('http://localhost:8060/admin/get-images-stocks/get-images');
+    imagesStocks.value = responseStocks.data;
+    console.log(imagesStocks.value.stocks);
+    for(const m of imagesStocks.value.stocks){
+        console.log(m.image);
     }
-  });
+    const responsePopulars = await axios.get('http://localhost:8060/admin/get-images-populars/get-images');
+    imagesPopulars.value = responsePopulars.data;
+    
+  }catch(e){
+    console.error(e);
+  }
+};
+
+const sendStocksImage = event => {
+  const formData = new FormData();
+  formData.append('idType', idTipe.value);
+  formData.append('imageFile', event.target.files[0]);
+  try {
+    axios.post('http://localhost:8060/admin/add-image-stocks-populars/upload/', formData, {
+        headers:{
+          'Content-Type': 'multipart/form-data',
+        }
+      });    
+  } catch(e) {
+    alert('IS NOT ZBS');
+  }
 };
 
 const sendPopularImage = async () => {
-  const file = document.getElementById("populars_image_file").files[0];
   const formData = new FormData();
-  formData.append('popularsImage',file);
-  await axios.post('/add-image-stocks-populars/add-image',{fileImage:formData, idType:2},{
+  formData.append('idType', 2);
+  formData.append('imageFile', event.target.files[0]);
+  try{
+  await axios.post('/admin/add-image-stocks-populars/upload',formData,{
     headers:{
       'Content-Type': 'multipart/form-data',
     }
   });
+}catch(e){
+  alert('IS NOT ZBS');
+}
 };
 
 const checkToken = async () => {
@@ -87,16 +129,15 @@ const checkToken = async () => {
       console.log(getToken);
     } catch (error) {
       router.push('/admin');
-      console.error(error);
     }
   } else {
     router.push('/admin');
   }
 };
-  
+
 checkToken();
+getImages();
+
 </script>
-
 <style lang="scss" scoped src="./style.scss">
-
 </style>

@@ -1,5 +1,5 @@
 <template>
-    <div class="often-admin-cart-component">
+    <div class="popular-admin-cart-component">
         <delete-cart-btn-admin></delete-cart-btn-admin>
         <img src="">
     </div>

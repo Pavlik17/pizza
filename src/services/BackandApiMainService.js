@@ -7,6 +7,7 @@ const BackandApiMainService = {
     async getProducts(){
       return axios.get('http://localhost:8060/product/product');
       },
+      
 };
 
 export default BackandApiMainService;

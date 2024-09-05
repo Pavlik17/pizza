@@ -15,6 +15,12 @@ export default defineConfig({
   },
   server: {
     proxy: {
+      //тест
+      '/test':{
+        target:'http://localhost:8060/test/test',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/test/, ''),
+      },
       '/check-token': {
         target: 'http://localhost:8060/check-token',
         changeOrigin: true,
@@ -25,20 +31,39 @@ export default defineConfig({
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/send-order/, ''),
       },
+//регистрация
+      '/register':{
+        target: 'http://localhost:8060',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/register$/, '/register/register'),
+      },
+//авторизация      
       '/auth':{
         target: 'http://localhost:8060/auth',
         changeOrigin:true,
         rewrite: (path) => path.replace(/^\/auth/, ''),
       },
-      '/add-image-stocks-populars':{
-        target:'http://localhost:8060/add-image-stocks-populars',
-        changeOrigin:true,
-        rewrite: (path) => path.replace(/^\/add-image-stocks-populars/, ''),
-      },
+//добавление изображений
       '/add-image-menu-products':{
-        target:'http://localhost:8060/add-image-menu-products',
+        target:'http://localhost:8060/admin/add-image-menu-products',
         changeOrigin:true,
         rewrite: (path) => path.replace(/^\/add-image-menu-products/, ''),
+      },
+      '/admin/add-image-stocks-populars':{
+        target:'http://localhost:8060/admin/add-image-stocks-populars/upload/',
+        changeOrigin:true,
+       rewrite: (path) => path.replace(/^\/admin\/add-image-stocks-populars\/upload/, ''),
+      },
+//получение изображений
+      '/admin/get-images-stocks':{
+        target:'http://localhost:8060/admin/get-images-stocks/get-images/',
+        changeOrigin:true,
+        rewrite: (path) => path.replace(/^\/admin\/get-images-stocks\/get-images/, ''),
+      },
+      '/admin/get-images-populars':{
+        target:'http://localhost:8060/admin/get-images-populars/get-images/',
+        changeOrigin:true,
+        rewrite: (path) => path.replace(/^\/admin\/get-images-populars\/get-images/, ''),
       },
     }
   },

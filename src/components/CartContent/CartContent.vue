@@ -26,8 +26,16 @@ import MainContainer from "@/components/MainContainer/MainContainer.vue";
 import CartElement from "@/components/CartElement/CartElement.vue";
 import {ProductDataStore} from "@/store/store.js";
 import OrderInformation from "@/components/OrderInformation/OrderInformation.vue";
+import { onMounted } from "vue";
 
 const store = ProductDataStore();
+
+onMounted(
+  () => {
+    localStorage.setItem('auth_window_state',false);
+  }
+);
+
 </script>
 
 <style lang="scss" scoped src="./style.scss">
