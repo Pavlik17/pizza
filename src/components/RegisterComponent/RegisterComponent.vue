@@ -13,14 +13,13 @@
 
 <script setup>
 
-/* Переписать логику приема-передачи данных и обработки ответа с нуля( пути особое внимание)*/
-
     import axios from 'axios';
     import { ref } from 'vue';
     const nameData = ref('');
     const phoneData = ref('');
     const emailData = ref('');
     const passwordData = ref('');
+    const emits = defineEmits(['closeWindowRegister']);
 
     const sendData = async () => {
         const data = {
@@ -30,19 +29,20 @@
             phone: phoneData.value,
         }
         try{
-            console.log('Вызван send data');
-            const response = await axios.post('/register',data,
+            const response = await axios.post('/register', data,
                 {
                     headers: {
                         'Content-Type': 'application/json',
                     },
                 }
             );
-            console.log('Удачно' + response);
-            if(response.statusCode == 201){};
-            //router.push();
-        }
-        catch(error){
+            console.log('Удачно ' + response.status);
+            if(response.status === 201){
+                console.log("Response body" + response);
+                emits('closeWindowRegister');
+                console.log('Регистрация прошла успешно.');              
+            };
+        }catch(error){
             if (error.response) {
                 // Запрос был сделан, и сервер ответил кодом, который выходит за пределы 2xx
                 console.log('Ошибка ответа:', error.response.data);
@@ -56,6 +56,8 @@
             }
         }
     };
+
+   
 </script>    
 
 <style src="./style.scss">

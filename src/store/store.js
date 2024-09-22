@@ -26,7 +26,6 @@ export const  ProductDataStore= defineStore('products_data',() => {
                             count: product.count + 1,
                         }
                     }
-
                     return product;
                 });
             } else {

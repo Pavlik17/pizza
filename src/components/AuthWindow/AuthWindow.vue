@@ -7,14 +7,14 @@
         <input class="password-field" v-model ="passwordData" type="password" placeholder="Пароль">
         <div class="auth-register-buttons">
             <button v-show="!authResult" class="enter-button" v-on:click="sendData()">Войти</button>
-            <button v-show="!authResult" class="enter-button" v-on:click="changeShowRegister()">Зарегистрироваться</button>
+            <button v-show="!authResult" class="enter-button" v-on:click="changeShowRegister(true)">Зарегистрироваться</button>
         </div>
         <div v-show="authResult" class="reset-button-block">
             <button class="enter-button" v-on:click="sendData()">Войти</button>
             <button class="reset-button" v-on:click="">Сброс пароля</button>
         </div>
     </div>
-    <register-component v-show="showRegister"></register-component>
+    <register-component @closeWindowRegister = "changeShowRegister(false)"  v-show="showRegister"></register-component>
 </template>
 
 <script setup>
@@ -54,23 +54,26 @@
     try{
         console.log(data);
         const response = await axios.post('/auth/auth', data);
-        
         localStorage.setItem('token', response.data.accessToken);  // сохраняем токен в локальное хранилище
         router.push('/admin_panel');
         
     }catch(error){
-
         authResult.value = true;
-            console.log(error);
+            if(error.response.status === 401){
+                alert(
+                    "Данный пользователь не зарегистрирован."
+                );
+            }
         }
     };
-    const changeShowRegister = () => {
-       showRegister.value = true;
+
+    
+    const changeShowRegister = (isShow) => {
+        console.log("Old showRegister: " + showRegister.value);
+        showRegister.value = isShow;
+        console.log("New showRegister: " + showRegister.value);
     };
 
 </script>
 
-<style lang="scss" scoped src="./style.scss">
-</style>
-
-
+<style lang="scss" scoped src="./style.scss"></style>

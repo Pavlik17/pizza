@@ -3,13 +3,17 @@ import ArrowPrevSlider from "@/components/icons/ArrowPrewSlider/ArrowPrevSlider.
 import ArrowNextSlider from "@/components/icons/ArrowNextSlider/ArrowNextSlider.vue";
 import {Swiper, SwiperSlide} from "swiper/vue";
 import {Navigation} from "swiper/modules";
+import axios from "axios";
 import 'swiper/css';
+import { ref } from "vue";
 
 const modules = [Navigation];
+
 const navigation = {
   prevEl:'.prev-popular-button',
   nextEl:'.next-popular-button',
 };
+
 const breakpoints = {
   499: {
     slidesPerView: 1,
@@ -20,6 +24,22 @@ const breakpoints = {
     spaceBetweenSlides: 50
   }
 };
+
+const popularsImages = ref([]);
+const HOST_SERVER = 'http://localhost:8060';
+
+(async () => {
+  try {
+    const response = await axios.get(`${HOST_SERVER}/admin/get-images-populars/get-images`);
+    popularsImages.value = response.data.popular.map(item => ({
+      ...item,
+      image: `${HOST_SERVER}${item.image}`
+    }));
+    console.log(popularsImages.value);
+  } catch (e) {
+    alert('Произошел распиздец');
+  }
+})()
 </script>
 
 <template>
@@ -30,17 +50,26 @@ const breakpoints = {
       :modules="modules"
       :speed="100"
       :loop="true"
-      :slides-per-view="3"
+      :loopSlides="true"
+      :slides-per-view="5"
       :breakpoints="breakpoints"
     >
-      <swiper-slide class="popular-slide"><img class="popular-img" src="../../../public/assets/derev_slide.png" alt="slide"></swiper-slide>
-      <swiper-slide class="popular-slide"><img class="popular-img" src="../../../public/assets/barbecu_slide.png" alt="slide"></swiper-slide>
-      <swiper-slide class="popular-slide"><img class="popular-img" src="../../../public/assets/draniki_slide.png" alt="slide"></swiper-slide>
-      <swiper-slide class="popular-slide"><img class="popular-img" src="../../../public/assets/derev_slide.png" alt="slide"></swiper-slide>
-      <swiper-slide class="popular-slide"><img class="popular-img" src="../../../public/assets/barbecu_slide.png" alt="slide"></swiper-slide>
+    
+    <swiper-slide class="popular-slide" v-for="item in popularsImages" :key="item.id">
+      <img class="popular-img" v-bind:src="item.image" alt="изображение"> 
+    </swiper-slide> 
+    
+      <!-- 
+        <swiper-slide class="popular-slide"><img class="popular-img" src="../../../public/assets/draniki_slide.png" alt="slide"></swiper-slide>
+        <swiper-slide class="popular-slide" ><img class="popular-img" src="../../../public/assets/draniki_slide.png" alt="slide"></swiper-slide>
+        <swiper-slide class="popular-slide" ><img class="popular-img" src="../../../public/assets/draniki_slide.png" alt="slide"></swiper-slide>
+        <swiper-slide class="popular-slide" ><img class="popular-img" src="../../../public/assets/draniki_slide.png" alt="slide"></swiper-slide>
+        <swiper-slide class="popular-slide" ><img class="popular-img" src="../../../public/assets/draniki_slide.png" alt="slide"></swiper-slide> 
+      -->
+
     </swiper>
     <arrow-next-slider class="next-popular-button"></arrow-next-slider>
-  </div>
+  </div>                        
 </template>
 
 <style lang="scss" scoped src="./style.scss"></style>

@@ -8,14 +8,9 @@
 </template>
 
 <script setup>
-import { Swiper, SwiperSlide } from 'swiper/vue';
-import 'swiper/css';
-import 'swiper/css/navigation';
 import PopularSwiper from "@/components/PopularSwiper/PopularSwiper.vue";
 import StocksSwiper from "@/components/StocksSwiper/StocksSwiper.vue";
 
 </script>
 
-<style lang="scss" scoped src="./style.scss">
-
-</style>
+<style lang="scss" scoped src="./style.scss"></style>
