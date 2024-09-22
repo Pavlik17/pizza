@@ -1,4 +1,5 @@
 <template>
+    
     <main-container>
         <div class="container__top-header">
         <div class="mobile-menu">
@@ -36,7 +37,18 @@
 </template>
 
 <script setup>
+import CartButton from "@/components/icons/CartButton/CartButton.vue";
+import PizzaLogo from "@/components/icons/PizzaLogo/PizzaLogo.vue";
+import PizzaLogoTitle from "@/components/icons/PizzaLogoTitle/PizzaLogoTitle.vue";
+import MobileMenuButton from "@/components/icons/MobileMenuButton/MobileMenuButton.vue";
+import {ref} from "vue";
+import MainContainer from "@/components/MainContainer/MainContainer.vue";
+import ShopCart from "@/components/icons/ShopCart/ShopCart.vue";
 
+
+const showMobileMenu = ref(false);
+const showBottomHeader = ref(true);
+const changeShowMobileMenu = () => showMobileMenu.value = !showMobileMenu.value;
 </script>
 
 <style src="./style.scss"></style>

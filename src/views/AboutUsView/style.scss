@@ -1,0 +1,415 @@
+.header{
+    background-color: #FFFFFF;
+  }
+  .header__container{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    max-width: 1300px;
+  }
+  .container__top-header{
+    display: flex;
+    flex-direction: row;
+    padding-top: 15px;
+    width: 100%;
+    justify-content: space-evenly;
+  }
+  .cart_button{
+    width: 136px;
+  }
+  .header__header-logo-section{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: -110px;
+  }
+  .header-list{
+    display: flex;
+    flex-direction: row;
+    padding: 0px;
+  }
+  .header-list-element{
+    margin-left: 22px;
+    margin-right: 22px;
+    font-size: 16px;
+  }
+  
+  .header-list-element{
+    list-style-type: none;
+    cursor: pointer;
+  }
+  .header__cart-button-section{
+    cursor: pointer;
+  }
+  .container__bottom-header{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    margin-top: 181px;
+    align-items: center;
+  }
+  
+  .left-block__price{
+    font-size: 16px;
+    color: #ff1313;
+    font-family: bold-italic, serif;
+  }
+  .left-block__title{
+    margin-top: 20px;
+    margin-bottom: 52px;
+    font-size: 62.93px;
+  }
+  .left-block__description{
+    font-size: 14px;
+    font-family:raleway-regular,serif;
+    color:#333333;
+    line-height: 132%;
+  }
+  .bottom-header__block-button{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+  }
+  .block-button__red-button{
+    background-color:#FF1313;
+    border: none;
+    border-radius: 45px;
+    color: white;
+    font-family: Raleway-SemiBold,serif;
+    font-size: 16px;
+    padding: 14px 52px 15px 52px;
+    cursor: pointer;
+  }
+  .block-button__white-button{
+    background-color:white;
+    border: none;
+    border-radius: 45px;
+    color: black;
+    font-family: Raleway-SemiBold,serif;
+    font-size: 16px;
+    padding: 14px 52px 15px 52px;
+    margin-left: 16px;
+    cursor: pointer;
+  }
+  
+  .bottom-header__left-block{
+    margin-right: 22px;
+  }
+  .bottom-header__right-block{
+    margin-left: 46px;
+  }
+  
+  .info__title{
+    font-size: 20px;
+    font-family: Raleway-SemiBold, serif;
+    font-weight: bold;
+  }
+  
+  .info__info{
+    font-family: Raleway-Regular, serif;
+    font-size: 14px;
+    color: #626262;
+    padding-bottom: 20px;
+    padding-right: 8px;
+    border-bottom: 1px solid #C1C1C1;
+  }
+  .shop-cart{
+    display: none;
+  }
+  @media (max-width: 1320px) {
+    .header__container{
+      max-width: 1000px;
+    }
+    .header__header-logo-section{
+      margin-left: 0px;
+    }
+    .container__top-header{
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+    .mobile-menu{
+      display: none;
+    }
+    .mobile-header-list{
+      display: none;
+    }
+    .header__cart-button-section{
+  
+    }
+    .header__header-logo-section{
+    }
+    .header-list{
+    }
+    .big-pizza-image{
+      max-width:400px;;
+    }
+    .mobile__top-header{
+      display: none;
+    }
+  }
+  @media (max-width: 1200px) {
+    .big-pizza-image{
+      max-width:400px;;
+    }
+    .mobile__top-header{
+      display: none;
+    }
+    .mobile-menu{
+      display: none;
+    }
+    .mobile-header-list{
+      display: none;
+    }
+  }
+  @media (max-width: 1050px){
+    .mobile__top-header{
+      display: none;
+    }
+    .mobile-menu{
+      display: none;
+    }
+    .mobile-header-list{
+      display: none;
+    }
+    .header__container{
+      max-width: 800px;
+    }
+    .header__header-logo-section{
+      margin-right: 0px;
+    }
+    .header__cart-button-section{
+      margin-left: 35px;
+    }
+    .left-block__title{
+      font-size: 50.93px;
+      margin-top: 15px;
+      margin-bottom: 40px;
+    }
+    .left-block__description{
+      font-size: 12px;
+    }
+    .big-pizza-image{
+      max-width: 340px;
+    }
+    .block-button__red-button{
+      max-width:135px;
+      padding: 14px 33px 15px 44px;
+    }
+    .block-button__white-button{
+      max-width: 135px;
+      padding: 14px 44px 15px 40px;
+    }
+    .bottom-header__left-block{
+      margin-right: 20px;
+    }
+    .bottom-header__right-block{
+      margin-left: 22px;
+    }
+    .info__title{
+      font-size: 18px;
+    }
+    .info__info{
+      font-size: 9px;
+    }
+  }
+  @media (max-width: 910px){
+    .info__title{
+      font-size: 16px;
+    }
+    .left-block__title{
+      font-size: 40px;
+    }
+    .big-pizza-image{
+      max-width: 300px;
+    }
+    .block-button__red-button{
+      max-width: 121px;
+      padding: 13px 28px 15px 32px;
+    }
+  }
+  @media (max-width: 850px){
+    .mobile__top-header{
+      display: none;
+    }
+    .mobile-menu{
+      display: none;
+    }
+    .mobile-header-list{
+      display: none;
+    }
+    .header__container{
+      max-width: 600px;
+    }
+    .header__cart-button-section{
+      display: none;
+    }
+    .container__bottom-header{
+      margin-top: 60px;
+    }
+    .bottom-header__left-block{
+      margin-right: 18px;
+    }
+    .header-list-element{
+      margin-left: 10px;
+      margin-right: 10px;
+      font-size: 14px;
+    }
+    .big-pizza-image{
+      max-width: 310px;
+    }
+    .bottom-header__right-block{
+      display: none;
+    }
+    .product-cart__title{
+      font-size: 25px;
+    }
+    .stocks-slide{
+      width: 210px;
+    }
+  }
+  @media (max-width: 700px) {
+    .container__top-header{
+      justify-content: center;
+    }
+  }
+  @media (max-width:630px) {
+    .container__top-header{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+    }
+    .mobile__top-header{
+      display: flex;
+      flex-direction: row;
+      padding-top: 5px;
+      justify-content: center;
+    }
+   .header-list{
+     display: none;
+   }
+    .header__container{
+      max-width: 480px;
+    }
+    .mobile-header__header-logo-section{
+      display: flex;
+      align-items: center;
+  
+    }
+    .header__header-logo-section{
+      margin-right: -55px;
+    }
+    .container__bottom-header{
+      margin-top: 60px;
+    }
+    .mobile-menu{
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      padding-top: 10px;
+    }
+    .mobile-menu-button{
+      width: 25px;
+    }
+    .mobile-header-list{
+      list-style-type: none;
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+      border-radius: 5px;
+      z-index: 4;
+      margin-top: 33px;
+      background-color: white;
+      padding-left: 20px;
+      padding-bottom: 13px;
+    }
+    .mobile-header-list-element{
+      padding-top: 15px;
+      min-width: 300px;
+      max-width: 500px;
+    }
+  
+    .big-pizza-image{
+      max-width: 240px;
+    }
+    .bottom-header__block-button{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .container__bottom-header{
+      margin-top: 60px;
+    }
+    .bottom-header__left-block{
+      margin-right: 0px;
+    }
+    .block-button__red-button{
+      min-width: 100%;
+    }
+    .block-button__red-button{
+      min-width: 100%;
+    }
+    .left-block__title{
+      font-size: 30px;
+    }
+    .left-block__description{
+      font-size: 9px;
+    }
+  }
+  @media (min-width: 320px) and (max-width: 490px){
+    .container__top-header{
+      position: relative;
+    }
+    .header__header-logo-section{
+      z-index: 3;
+    }
+    .cart-button-word{
+      display: none;
+    }
+    .cart_button{
+      display: flex;
+      margin-top: 3px;
+      justify-content: center;
+    }
+    .shop-cart{
+      display: flex;
+    }
+    .big-pizza-image{
+      max-width: 180px;
+      padding-left: 10px;
+    }
+    .bottom-header__left-block{
+      padding-left: 5px;
+    }
+    .header__container{
+      width: 100%;
+      max-width: 479px;
+    }
+    .bottom-header__block-button{
+      display: none;
+    }
+    .block-button__red-button{
+      max-width: 100%;
+      padding: 14px 33px 15px 33px;
+    }
+    .block-button__white-button{
+      max-width: 100%;
+      padding: 14px 40px 15px 40px;
+      margin-left: 0px;
+    }
+    .left-block__description{
+      max-width: 70%;
+    }
+    .left-block__title{
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+    .mobile-menu{
+      padding-left: 5px;
+    }
+    }
+  
+  

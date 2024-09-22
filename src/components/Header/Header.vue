@@ -5,11 +5,13 @@
         <div class="mobile-menu">
           <mobile-menu-button class="mobile-menu-button" v-on:click="changeShowMobileMenu"></mobile-menu-button>
           <ol class="mobile-header-list" v-show="showMobileMenu">
-            <li class="mobile-header-list-element">Акции</li>
-            <li class="mobile-header-list-element">Меню</li>
-            <li class="mobile-header-list-element">Доставка</li>
-            <li class="mobile-header-list-element">Контакты</li>
-            <li class="mobile-header-list-element">О нас</li>
+            <a><li class="mobile-header-list-element">Акции</li></a>
+            <a><li class="mobile-header-list-element">Меню</li></a>
+            <a><li class="mobile-header-list-element">Доставка</li></a>
+            <a><li class="mobile-header-list-element">Контакты</li></a>
+            <router-link to="/about" style="text-decoration: none; color: black;">
+              <a><li class="mobile-header-list-element">О нас</li></a>
+            </router-link>
           </ol>
         </div>
         <router-link to="/">
@@ -23,7 +25,9 @@
           <li class="header-list-element">Меню</li>
           <li class="header-list-element">Доставка</li>
           <li class="header-list-element">Контакты</li>
-          <li class="header-list-element">О нас</li>
+          <router-link to="/about" style="text-decoration: none; color: black;">
+            <li class="header-list-element">О нас</li>
+          </router-link>
         </ol>
          <router-link to="/cart" class="cart_button" >
             <cart-button class="cart-button-word"></cart-button>
@@ -71,11 +75,14 @@ import {ref} from "vue";
 import MainContainer from "@/components/MainContainer/MainContainer.vue";
 import ShopCart from "@/components/icons/ShopCart/ShopCart.vue";
 
+
 const showMobileMenu = ref(false);
 const showBottomHeader = ref(true);
 const changeShowMobileMenu = () => showMobileMenu.value = !showMobileMenu.value;
 
 if(location.pathname !== '/') showBottomHeader.value = false;
+
+
 </script>
 <style src="./style.scss" scoped>
 </style>

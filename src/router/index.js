@@ -2,12 +2,12 @@ import {createRouter, createWebHistory} from "vue-router";
 import HomeView from "@/views/HomeView/HomeView.vue";
 import AdminPanelView from "@/views/AdminPanelView/AdminPanelView.vue";
 import CartView from "@/views/CartView/CartView.vue";
-import AboutAs from "@/components/AboutAs/AboutAs.vue";
 import AdminLayout from "@/layouts/AdminLayout/AdminLayout.vue";
 import AuthWindow from "@/components/AuthWindow/AuthWindow.vue";
 import ProductDataStore from "@/store/store.js";
 import axios from "axios";
 import { nextTick } from "vue";
+import AboutUsView from "@/views/AboutUsView/AboutUsView.vue";
 
 
 
@@ -32,7 +32,7 @@ const router = createRouter({
         {
             path:'/about',
             name:'about',
-            component:AboutAs,
+            component:AboutUsView,
         },
         {
             path:'/admin',
