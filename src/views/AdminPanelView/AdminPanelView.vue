@@ -14,9 +14,7 @@
             </div>
             
             <ul class="stocks-list">
-              <!--массив изображений-->
-              <stocks-cart-component v-for="item in imagesStocks.value" :image-path="item.stocks"></stocks-cart-component>
-              
+              <stocks-cart-component v-for="item in imagesStocks.value" ></stocks-cart-component>
             </ul>
           </div>
           <input type="file" ref="stocks_input" id="stocks_image_file" @change="sendStocksImage" v-on:click="changeIdType(1)" accept=".jpg, .jpeg, .png">
@@ -39,15 +37,17 @@
         </div>
 
       </main-container>
-      <main-container>
+       <main-container>
         <h1 class="menu-header">Меню</h1>
-        <p class="menu-description">Добавляйте новые акции или удаляйте имеющиеся</p>
-        <admin-menu-element v-for="item in arrayCategories" :category="item.name"></admin-menu-element>
-      </main-container>
+        <p class="menu-description">Добавляйте новые варианты меню, удаляйте имеющиеся</p>
+          <admin-menu-element v-for="item in categoriesMenuProducts" :categoryData="item"></admin-menu-element> 
+        </main-container>
       <main-container>
       </main-container>
   </div>
 </template>
+
+d
 
 <script setup>
 import { onMounted } from 'vue';
@@ -61,6 +61,8 @@ import AdminMenuElement from '@/components/AdminMenuElement/AdminMenuElement.vue
 import BackandApiMainService from '@/services/BackandApiMainService';
 import StocksCartComponent from '@/components/StocksCartComponent/StocksCartComponent.vue';
 
+
+const HOST_SERVER = 'http://localhost:8060';
 const imagesStocks = ref([]);
 const imagesPopulars = ref([]);
 const categoriesMenuProducts = ref([]);
@@ -70,21 +72,31 @@ const changeIdType = (num) => {
   idTipe.value = num;
 };
 
-const getImages =  async() => {
+(async() => {
   try{
-    const responseStocks = await axios.get('http://localhost:8060/admin/get-images-stocks/get-images');
-    imagesStocks.value = responseStocks.data;
-    console.log(imagesStocks.value.stocks);
-    for(const m of imagesStocks.value.stocks){
-        console.log(m.image);
-    }
-    const responsePopulars = await axios.get('http://localhost:8060/admin/get-images-populars/get-images');
-    imagesPopulars.value = responsePopulars.data;
+    const temporaryCategoriesNames = await axios.get(`${HOST_SERVER}/product/category`);
+    const tCategories = temporaryCategoriesNames.data.categories;
+
+    // const comboProducts = await axios.get(`${HOST_SERVER}/product/combo-products`);
+    // const dessertsProducts = await axios.get(`${HOST_SERVER}/product/desserts-products`);
+    // const dranksProducts = await axios.get(`${HOST_SERVER}/product/drancks-products`);
+    // const pizzaProducts = await axios.get(`${HOST_SERVER}/product/pizza-products`);
+    // const snacksProducts = await axios.get(`${HOST_SERVER}/product/snacks-products`);
+
     
+    tCategories.forEach(element => {
+      categoriesMenuProducts.value.push(element);
+    });
+    // console.log(categoriesMenuProducts.value);
+    // // categoriesMenuProducts.value = temporaryCategoriesNames;
+    //  //console.log(temporaryCategoriesNames.data.categories);
+    // temporaryCategoriesNames.data.categories.array.forEach(element => {
+    //   categoriesMenuProducts.value = element;
+    // });
   }catch(e){
     console.error(e);
   }
-};
+})()
 
 const sendStocksImage = event => {
   const formData = new FormData();
@@ -136,7 +148,6 @@ const checkToken = async () => {
 };
 
 checkToken();
-getImages();
 
 </script>
 <style lang="scss" scoped src="./style.scss">

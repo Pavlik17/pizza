@@ -21,12 +21,12 @@
             </div>
             <img src="">
             <p>Название</p>
-            <p class="title-product-edit"></p>
+            <p class="title-product-edit">{{ productData.title }}</p>
             <p>Описание</p>
-            <p class="description-product-edit"></p>
+            <p class="description-product-edit">{{ productData.description }}</p>
             <p>Цена</p>
             <div class="price-choose-button-edit">
-                <p class="price-edit">от</p>
+                <p class="price-edit">от {{productData.pricw}}</p>
                 <button class="save-button" v-if="editCart">Сохранить</button>
             </div>
         </div>
@@ -42,10 +42,7 @@ import { ref } from "vue";
 const editCart = ref(false);
 
 const props = {
-    imagePath:String,
-    productTitle: String,
-    productDescription: String,
-    price: Number,
+    productData:Object,
 };
 </script>
 

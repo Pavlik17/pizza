@@ -22,7 +22,7 @@ export default defineConfig({
         rewrite: (path) => path.replace(/^\/test/, ''),
       },
       '/check-token': {
-        target: 'http://localhost:8060/check-token',
+        target: 'http://localhost:8060/check-token/check-token',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/check-token/, ''),
       },
@@ -30,6 +30,12 @@ export default defineConfig({
         target: 'http://localhost:8060/send-order',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/send-order/, ''),
+      },
+//категории продуктов
+      '/get-categories':{
+          target:'http://localhost:8060/product/category',
+          changeOrigin: true,
+          rewrite: (path) => path.replace(/^\/category/, ''),
       },
 //регистрация
       '/register':{
@@ -64,6 +70,32 @@ export default defineConfig({
         target:'http://localhost:8060/admin/get-images-populars/get-images/',
         changeOrigin:true,
         rewrite: (path) => path.replace(/^\/admin\/get-images-populars\/get-images/, ''),
+      },
+  //данные для админки 
+      '/product/pizza':{
+        target:'http://localhost:8060/product/pizza-products/',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/product/, ''),  
+      },
+      '/product/desserts':{
+        target:'http://localhost:8060/product/desserts-products/',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/product/, ''),  
+      },
+      '/product/snacks':{
+        target:'http://localhost:8060/product/snacks-products/',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/product/, ''),  
+      },
+      '/product/drancks':{
+        target:'http://localhost:8060/product/drancks-products/',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/product/, ''),  
+      },
+      '/product/combo':{
+        target:'http://localhost:8060/product/combo-products/',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/product/, ''),  
       },
     }
   },

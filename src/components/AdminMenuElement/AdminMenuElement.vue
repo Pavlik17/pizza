@@ -1,23 +1,30 @@
 <template>
     <div class="admin-menu-element">
         <div class="admin-menu">
+            <h1 class="category-name">{{ props.categoryData.name }} </h1>
             <admin-add-cart-menu></admin-add-cart-menu>
-            <!--тут отображаем одну категорию продуктов и клмпонент добавления продукта привязанный к категории продукта -->
-            <admin-product-cart></admin-product-cart>
-            <!--добавить обертку для кнопки добавления продукта-->
+            <admin-product-cart  v-for="item in arrayProducts"></admin-product-cart>
         </div>
     </div>
 </template>
 
 <script setup>
-
-import axios from 'axios';
+    import AdminProductCart from '../AdminProductCart/AdminProductCart.vue';
+    import AdminAddCartMenu from '../AdminAddCartMenu/AdminAddCartMenu.vue';
+    import BackandApiMainService from '@/services/BackandApiMainService';
+    import { defineProps } from 'vue';
+    import axios from 'axios';
+    import { ref } from 'vue';
 
 const sendProductMenu = async () =>{
   const file = document.getElementById().files[0];
   const formData = new FormData();
   formData.append('stocksImage', file);
-  await axios.post('/add-image-menu-produts/add-image',{imageFile:formData,categoryId:props.categoryId},{
+  await axios.post('/add-image-menu-produts/add-image',
+    {
+        imageFile:formData,categoryId:props.categoryId
+    },
+    {
     headers:{
       'Content-Type': 'multipart/form-data',
     }
@@ -25,20 +32,63 @@ const sendProductMenu = async () =>{
 };
 
 const props = defineProps({
-    categoryId:Number,
-})
+    categoryData:Object,
+    //вывести название категории и на основе id категории вывести карточки продуктов
+});
 
-(async () => {
+const idCategory = ref();
+const arrayProducts = ref([]);
+// idCategory.value = categoryData.id;
+const HOST_SERVER = 'http://localhost:8060';
+const showProps = () =>{
+   // console.log(props.categoryData.id);
+};
+
+(
+    async () => {
     try{
-        const arrayProducts = await BackandApiMainService.getProducts();
+        //const arrayProducts = await BackandApiMainService.getProducts();
+       
+        if(props.categoryData.id  == 1){
+            arrayProducts.value = await axios.get(`${HOST_SERVER}/product/pizza-products`);
+            console.log(props.categoryData.id);
+            console.log(arrayProducts.value);
+            console.log('-----------+----------');
+        }
+        else if(props.categoryData.id == 2)
+        {
+            arrayProducts.value = await axios.get(`${HOST_SERVER}/product/snacks-products`);
+            console.log(props.categoryData.id);
+            console.log(arrayProducts.value);
+            console.log('-----------+----------');
+        }
+        else if(props.categoryData.id == 3)
+        {         
+            arrayProducts.value = await axios.get(`${HOST_SERVER}/product/desserts-products`);
+            console.log(props.categoryData.id);
+            console.log(arrayProducts.value);
+            console.log('-----------+----------');
+        }
+        else if(props.categoryData.id == 4)
+        { 
+            arrayProducts.value = await axios.get(`${HOST_SERVER}/product/drancks-products`);
+            console.log(props.categoryData.id);
+            console.log(arrayProducts.value);
+            console.log('-----------+----------');
+        }
+        else if(props.categoryData.id == 5)
+        {            
+            arrayProducts.value = await axios.get(`${HOST_SERVER}/product/combo-products`);
+            console.log(props.categoryData.id);
+            console.log(arrayProducts.value);
+            console.log('-----------+----------');
+        }
     }catch(error){
         return error;
     }
-})
+})()
+showProps();
 
-    import AdminProductCart from '../AdminProductCart/AdminProductCart.vue';
-    import AdminAddCartMenu from '../AdminAddCartMenu/AdminAddCartMenu.vue';
-    import BackandApiMainService from '@/services/BackandApiMainService';
 </script>
 
 <style src="./style.scss"></style>
