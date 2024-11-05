@@ -3,7 +3,13 @@
         <div class="admin-menu">
             <h1 class="category-name">{{ props.categoryData.name }} </h1>
             <admin-add-cart-menu></admin-add-cart-menu>
-            <admin-product-cart  v-for="item in arrayProducts"></admin-product-cart>
+            <admin-product-cart
+                v-for="item in arrayProducts"
+                :title ="item.title"
+                :description = "item.description"
+                :price = "item.price"
+            >
+            </admin-product-cart>
         </div>
     </div>
 </template>
@@ -11,7 +17,6 @@
 <script setup>
     import AdminProductCart from '../AdminProductCart/AdminProductCart.vue';
     import AdminAddCartMenu from '../AdminAddCartMenu/AdminAddCartMenu.vue';
-    import BackandApiMainService from '@/services/BackandApiMainService';
     import { defineProps } from 'vue';
     import axios from 'axios';
     import { ref } from 'vue';
@@ -38,57 +43,38 @@ const props = defineProps({
 
 const idCategory = ref();
 const arrayProducts = ref([]);
-// idCategory.value = categoryData.id;
 const HOST_SERVER = 'http://localhost:8060';
-const showProps = () =>{
-   // console.log(props.categoryData.id);
-};
 
 (
     async () => {
     try{
-        //const arrayProducts = await BackandApiMainService.getProducts();
-       
         if(props.categoryData.id  == 1){
-            arrayProducts.value = await axios.get(`${HOST_SERVER}/product/pizza-products`);
-            console.log(props.categoryData.id);
-            console.log(arrayProducts.value);
-            console.log('-----------+----------');
+            arrayProducts.value = (await axios.get(`${HOST_SERVER}/product/pizza-products`))
+            .data.pizzas_info ?? [];
         }
         else if(props.categoryData.id == 2)
         {
-            arrayProducts.value = await axios.get(`${HOST_SERVER}/product/snacks-products`);
-            console.log(props.categoryData.id);
-            console.log(arrayProducts.value);
-            console.log('-----------+----------');
+            arrayProducts.value = (await axios.get(`${HOST_SERVER}/product/snacks-products`)) 
+            .data.snacks_info?? [];
         }
         else if(props.categoryData.id == 3)
         {         
-            arrayProducts.value = await axios.get(`${HOST_SERVER}/product/desserts-products`);
-            console.log(props.categoryData.id);
-            console.log(arrayProducts.value);
-            console.log('-----------+----------');
+            arrayProducts.value = (await axios.get(`${HOST_SERVER}/product/desserts-products`)) 
+            .data.desserts_info ?? [];
         }
         else if(props.categoryData.id == 4)
         { 
-            arrayProducts.value = await axios.get(`${HOST_SERVER}/product/drancks-products`);
-            console.log(props.categoryData.id);
-            console.log(arrayProducts.value);
-            console.log('-----------+----------');
+            arrayProducts.value = (await axios.get(`${HOST_SERVER}/product/drancks-products`))
+            .data.dranks_info ?? [];
         }
         else if(props.categoryData.id == 5)
         {            
-            arrayProducts.value = await axios.get(`${HOST_SERVER}/product/combo-products`);
-            console.log(props.categoryData.id);
-            console.log(arrayProducts.value);
-            console.log('-----------+----------');
+            arrayProducts.value = (await axios.get(`${HOST_SERVER}/product/combo-products`))
+            .data.combo_info ?? [];
         }
     }catch(error){
-        return error;
+        alert(error.message);
     }
-})()
-showProps();
-
+})();
 </script>
-
 <style src="./style.scss"></style>

@@ -76,23 +76,10 @@ const changeIdType = (num) => {
   try{
     const temporaryCategoriesNames = await axios.get(`${HOST_SERVER}/product/category`);
     const tCategories = temporaryCategoriesNames.data.categories;
-
-    // const comboProducts = await axios.get(`${HOST_SERVER}/product/combo-products`);
-    // const dessertsProducts = await axios.get(`${HOST_SERVER}/product/desserts-products`);
-    // const dranksProducts = await axios.get(`${HOST_SERVER}/product/drancks-products`);
-    // const pizzaProducts = await axios.get(`${HOST_SERVER}/product/pizza-products`);
-    // const snacksProducts = await axios.get(`${HOST_SERVER}/product/snacks-products`);
-
-    
     tCategories.forEach(element => {
       categoriesMenuProducts.value.push(element);
     });
-    // console.log(categoriesMenuProducts.value);
-    // // categoriesMenuProducts.value = temporaryCategoriesNames;
-    //  //console.log(temporaryCategoriesNames.data.categories);
-    // temporaryCategoriesNames.data.categories.array.forEach(element => {
-    //   categoriesMenuProducts.value = element;
-    // });
+ 
   }catch(e){
     console.error(e);
   }
@@ -102,6 +89,7 @@ const sendStocksImage = event => {
   const formData = new FormData();
   formData.append('idType', idTipe.value);
   formData.append('imageFile', event.target.files[0]);
+  console.log(typeof(formData))
   try {
     axios.post('http://localhost:8060/admin/add-image-stocks-populars/upload/', formData, {
         headers:{
@@ -118,7 +106,7 @@ const sendPopularImage = async () => {
   formData.append('idType', 2);
   formData.append('imageFile', event.target.files[0]);
   try{
-  await axios.post('/admin/add-image-stocks-populars/upload',formData,{
+  await axios.post('http://localhost:8060/admin/add-image-stocks-populars/upload',formData,{
     headers:{
       'Content-Type': 'multipart/form-data',
     }

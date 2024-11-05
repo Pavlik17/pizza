@@ -3,6 +3,7 @@ import ButtonMenu from "@/components/icons/ButtonMenu/ButtonMenu.vue";
 import {ProductDataStore} from "@/store/store.js";
 
 const props = defineProps({
+  imagePath:String,
   titleProduct:String,
   descriptionProduct:String,
   priceProduct:Number,
@@ -10,14 +11,19 @@ const props = defineProps({
 });
 
 const store = ProductDataStore();
+
+let image = null;
+props.imagePath ?  image = 'http://localhost:8060' + props.imagePath :
+  image = '../../../public/assets/pizza_image.png';
+
 </script>
 
 <template>
-  <div class="product-cart">
+  <div class="http://localhost:8060' + product-cart">
     <slot name="image-product">
-      <img class="image-product" src="../../../public/assets/pizza_image.png" alt="pizza">
+      <img class="image-product" :src="image" alt="pizza">
     </slot>
-    <h1 class="product-cart__title">{{props.titleProduct}}</h1>
+    <h1 class="product-cart__title">{{ props.titleProduct }}</h1>
     <p class="product-cart__description-product">{{props.descriptionProduct}}</p>
     <div class="product-cart__footer-cart">
       <div class="price-product">от {{props.priceProduct}} р.</div>

@@ -49,17 +49,29 @@ export default defineConfig({
         changeOrigin:true,
         rewrite: (path) => path.replace(/^\/auth/, ''),
       },
-//добавление изображений
-      '/add-image-menu-products':{
-        target:'http://localhost:8060/admin/add-image-menu-products',
+      //добавить продукт в админке
+      '/admin/add-image-menu-products':{
+        target:'http://localhost:8060/admin/add-image-menu-products/upload/',
         changeOrigin:true,
-        rewrite: (path) => path.replace(/^\/add-image-menu-products/, ''),
+        rewrite: (path) => path.replace(/^\/add-image-menu-products\/upload/, ''),
       },
-      '/admin/add-image-stocks-populars':{
-        target:'http://localhost:8060/admin/add-image-stocks-populars/upload/',
+      
+      // '/admin/add-image-stocks-populars':{
+      //   target:'http://localhost:8060/admin/add-image-stocks-populars/upload/',
+      //   changeOrigin:true,
+      //  rewrite: (path) => path.replace(/^\/admin\/add-image-stocks-populars\/upload/, ''),
+      // },
+//добавление продукта
+      '/add-product':{
+        target: 'http://localhost:8060/product/add-product',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/add-product/, ''),
+      },
+      '/add-admin-menu-product':{
+        target:'http://localhost:8060/admin/add-admin-menu-products/upload',
         changeOrigin:true,
-       rewrite: (path) => path.replace(/^\/admin\/add-image-stocks-populars\/upload/, ''),
-      },
+        rewrite: (path) => path.replace(/^\/admin\/add-admin-menu-products\/upload/, ''),
+      },      
 //получение изображений
       '/admin/get-images-stocks':{
         target:'http://localhost:8060/admin/get-images-stocks/get-images/',

@@ -16,6 +16,7 @@
       <ul class="carts-list">
         <product-cart v-for="item in currentProductList"
                       :key="item.id"
+                      :image-path="item.image"
                       :title-product="item.title"
                       :description-product="item.description"
                       :price-product="item.price"

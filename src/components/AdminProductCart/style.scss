@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     border:1px solid red;
+    max-width: 262px;
 }
 .save-button{
     background-color: #FF1313;
@@ -27,3 +28,46 @@
     line-height: 14px;
     margin-left: auto;
 }
+.title-product{
+    font-size: 22px;   
+    color: #FF1313;
+    font-weight: 600;
+    margin-bottom: 21px;
+    margin-top:24px;
+}
+.change-delete-buttons{
+    display: flex;
+    justify-content: flex-end;
+}
+.change-cart-button-black{
+    position: absolute;
+    right: 0;
+}
+.delete-cart-btn-admin{
+    position: absolute;
+    top: 2px;
+    right: 35px;
+}
+.description-product{
+    font-size: 14px;
+    font-weight: 400;
+    color: #626262;
+    margin-bottom: 40px;
+}
+.price-choose-button{
+    display: flex;
+    max-height: 32px;
+}
+.price-product{
+    font-size: 24px;
+    font-weight: 600;
+    color: #121010;
+    margin: 0;
+}
+
+.choose-button{
+    font-size: 12px;
+    font-weight: 500;
+    color: #FFFFFF;
+}
+
